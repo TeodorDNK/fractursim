@@ -1,0 +1,27 @@
+{
+  "brand": "Fracturism",
+  "nav": {
+    "home": "Home",
+    "manifest": "Manifest",
+    "gallery": "Gallery",
+    "fashion": "Fashion & Design",
+    "artist": "The Artist",
+    "news": "News",
+    "contact": "Contact",
+    "legal": "Legal"
+  },
+  "home": {
+    "title": "Fracturism – The art of rupture. The beauty of imperfection.",
+    "sub": "A movement founded by Teodor G. Dinică. A world shattered into new meanings.",
+    "cta": "Read the Manifest"
+  },
+  "footer": { "rights": "Fracturism® – all rights reserved." },
+  "manifest": { "title": "The Fracturist Manifest", "by": "By Teodor G. Dinică" },
+  "gallery": { "title": "Gallery" },
+  "fashion": { "title": "Fashion & Design", "disclaimer": "Fracturism®️ is a protected trademark. All products are original." },
+  "artist": { "title": "The Artist" },
+  "news": { "title": "News" },
+  "contact": { "title": "Contact", "note": "Fracturism®️ is a protected trademark. Use of the name or logo requires written permission." },
+  "legal": { "title": "Legal" },
+  "lang": { "label": "Language" }
+}
