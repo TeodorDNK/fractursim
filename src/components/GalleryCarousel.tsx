@@ -22,11 +22,49 @@ export default function GalleryCarousel({
   locale?: string;
 }) {
   const [idx, setIdx] = useState(0);
+  const [vw, setVw] = useState(0); // lățimea reală a viewport-ului caruselului (px)
+  const wrapRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
+
   const startX = useRef<number | null>(null);
   const deltaX = useRef<number>(0);
 
-  const go = (n: number) => setIdx((p) => (n + items.length) % items.length);
+  const measure = () => {
+    const w = wrapRef.current?.clientWidth || 0;
+    setVw(w);
+    // repoziționează exact pe slide curent
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(${-idx * w}px)`;
+    }
+  };
+
+  useEffect(() => {
+    measure();
+    // re-măsurare la resize/orientation change
+    const onR = () => measure();
+    window.addEventListener("resize", onR);
+    window.addEventListener("orientationchange", onR);
+    return () => {
+      window.removeEventListener("resize", onR);
+      window.removeEventListener("orientationchange", onR);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const go = (n: number) =>
+    setIdx((p) => {
+      const next = (n + items.length) % items.length;
+      if (trackRef.current) {
+        trackRef.current.style.transition = "transform 300ms";
+        trackRef.current.style.transform = `translateX(${-next * vw}px)`;
+      }
+      // curăță transition după animare
+      window.setTimeout(() => {
+        if (trackRef.current) trackRef.current.style.transition = "";
+      }, 320);
+      return next;
+    });
+
   const next = () => go(idx + 1);
   const prev = () => go(idx - 1);
 
@@ -38,69 +76,85 @@ export default function GalleryCarousel({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [idx]);
-
-  // helper pentru lățimea reală a viewport-ului caruselului
-  const getViewportWidth = () =>
-    trackRef.current?.parentElement?.clientWidth || trackRef.current?.clientWidth || 1;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idx, vw]);
 
   // touch
   const onTouchStart = (e: React.TouchEvent) => {
     startX.current = e.touches[0].clientX;
     deltaX.current = 0;
   };
+
   const onTouchMove = (e: React.TouchEvent) => {
     if (startX.current == null) return;
-    deltaX.current = e.touches[0].clientX - startX.current;
-
-    const vw = getViewportWidth();
-    const shiftPct = (deltaX.current / vw) * 100; // deplasare relativă la viewport, nu la track
+    deltaX.current = e.touches[0].clientX - startX.current; // px
     if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(calc(${-idx * 100}% + ${shiftPct}%))`;
+      trackRef.current.style.transform = `translateX(${-(idx * vw) + deltaX.current}px)`;
     }
   };
+
   const onTouchEnd = () => {
-    const threshold = 60;
+    // prag: 15% din lățimea viewport-ului sau 60px (oricare e mai mic)
+    const threshold = Math.min(vw * 0.15, 60);
     if (deltaX.current > threshold) prev();
     else if (deltaX.current < -threshold) next();
-
-    if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(${-idx * 100}%)`;
+    else {
+      // revine la slide curent
+      if (trackRef.current) {
+        trackRef.current.style.transition = "transform 200ms";
+        trackRef.current.style.transform = `translateX(${-idx * vw}px)`;
+        window.setTimeout(() => {
+          if (trackRef.current) trackRef.current.style.transition = "";
+        }, 220);
+      }
     }
     startX.current = null;
     deltaX.current = 0;
   };
 
-  // aplică transform-ul corect când se schimbă idx
+  // repoziționează când se schimbă idx (de ex. prin bullets)
   useEffect(() => {
     if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(${-idx * 100}%)`;
+      trackRef.current.style.transform = `translateX(${-idx * vw}px)`;
     }
-  }, [idx]);
+  }, [idx, vw]);
 
   return (
     <div className="w-full">
-      <div className="relative overflow-hidden rounded-xl border border-white/20">
+      <div
+        ref={wrapRef}
+        className="relative overflow-hidden rounded-xl border border-white/20"
+      >
         <div
           ref={trackRef}
-          className="flex transition-transform duration-300 will-change-transform"
-          style={{ transform: `translateX(${-idx * 100}%)` }} // fără width pe track!
+          className="flex will-change-transform touch-pan-y"
+          style={{ transform: `translateX(${-idx * vw}px)` }}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
           {items.map((it, i) => (
-            <figure key={i} className="min-w-full flex-none"> {/* slide = 100% din viewport */}
-              <Link href={`/${locale}/galerie/${it.slug}`} className="block group">
+            <figure
+              key={i}
+              className="m-0 flex-none" // fără margin implicit la <figure>
+              style={{ width: vw || "100%" }} // fiecare slide = lățimea viewport-ului
+            >
+              <Link
+                href={`/${locale}/galerie/${it.slug}`}
+                className="block group select-none"
+              >
+                {/* container imagine: pe mobil 65vh, centrat; imaginea se vede integral */}
                 <div
-                  className="relative w-full"
-                  style={{ aspectRatio: "3/2", maxHeight: "70vh", overflow: "hidden" }}
+                  className="relative w-full flex items-center justify-center bg-black/10"
+                  style={{ height: "65vh" }}
                 >
                   <img
                     src={it.src}
                     alt={it.title}
-                    className="absolute inset-0 h-full w-full object-contain bg-black/10 transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="max-h-full max-w-full h-auto w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                     loading={i === 0 ? "eager" : "lazy"}
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
                   />
                 </div>
 
