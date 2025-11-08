@@ -10,18 +10,113 @@
     "contact": "Contact",
     "legal": "Legal"
   },
-  "home": {
-    "title": "Fracturism – Arta rupturii. Frumusețea imperfecțiunii.",
-    "sub": "Un curent fondat de Teodor G. Dinică. O lume spartă în sensuri noi.",
-    "cta": "Descoperă Manifestul"
+    "contact": {
+    "title": "Scrie-ne un mesaj",
+    "description": "Lasă-ne adresa ta de e-mail și mesajul. Răspundem în cel mai scurt timp.",
+    "emailLabel": "E-mail",
+    "messageLabel": "Mesaj",
+    "submit": "Trimite",
+    "success": "Mesaj trimis. Mulțumim!",
+    "error": "Eroare la trimitere. Încearcă din nou."
   },
-  "footer": { "rights": "Fracturism® – toate drepturile rezervate." },
-  "manifest": { "title": "Manifestul Fracturist", "by": "De Teodor G. Dinică" },
-  "gallery": { "title": "Galerie" },
-  "fashion": { "title": "Modă & Design", "disclaimer": "Fracturism®️ este o marcă protejată. Toate produsele sunt originale." },
-  "artist": { "title": "Artistul" },
-  "news": { "title": "Noutăți" },
-  "contact": { "title": "Contact", "note": "Fracturism®️ este o marcă protejată. Utilizarea numelui sau a logoului necesită acordul scris al artistului." },
-  "legal": { "title": "Legal" },
-  "lang": { "label": "Limba" }
+   "home": {
+    "badge": "Fracturism",
+    "h1": "Frumusețea imperfecțiunii.",
+    "subtitle": "Un curent fondat de Teodor G. Dinică. O lume spartă în sensuri noi.",
+    "cta": "Descoperă Manifestul",
+    "sections": {
+      "manifest": {
+        "title": "Manifest",
+        "description": "Originea curentului, principiile de bază și poziționarea față de alte mișcări.",
+        "image": "/images/manifest.jpg",
+        "items": [
+          "Originea ideii",
+          "Principii cardinale",
+          "Estetica fragmentului"
+        ]
+      },
+      "gallery": {
+        "title": "Galerie",
+        "description": "Selecție de lucrări, seriile reprezentative și studii vizuale.",
+        "image": "/images/gallery.jpg",
+        "items": [
+          "Serii tematice",
+          "Detalii și macro",
+          "Lucrări în lucru"
+        ]
+      },
+      "fashion": {
+        "title": "Modă & Design",
+        "description": "Aplicarea fracturismului în textile, tipare, obiecte și spații.",
+        "image": "/images/fashion.jpg",
+        "items": [
+          "Texturi & pattern-uri",
+          "Capsule & colaborări",
+          "Obiecte funcționale"
+        ]
+      },
+      "artist": {
+        "title": "Artistul",
+        "description": "Teodor G. Dinică – parcurs, intenții și atelier.",
+        "image": "/images/artist.jpg",
+        "items": [
+          "Bio & interviuri",
+          "Proces & materiale",
+          "Declarație artistică"
+        ]
+      },
+      "news": {
+        "title": "Noutăți",
+        "description": "Anunțuri, expoziții și apariții în presă.",
+        "image": "/images/news.jpg",
+        "items": [
+          "Expoziții & vernisaje",
+          "Articole & recenzii",
+          "Calendar evenimente"
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "Comenzi, colaborări, expoziții. Spune-ne ce ai în minte.",
+        "image": "/images/contact.jpg",
+        "items": [
+          "Comenzi personalizate",
+          "Colaborări",
+          "Invitații la evenimente"
+        ]
+      }
+    }
+  },
+  "footer": { "rights": "Fracturism® Toate drepturile rezervate." },
+  "pages": {
+    "manifest": {
+      "title": "Manifestul Fracturist",
+      "byline": "De Teodor G. Dinică",
+      "epigraph": "„Nu mai putem picta lumea întreagă, ci doar cioburile ei…”",
+      "sections": {
+        "origin": { "title": "Originea ideii", "body": "Text de introdus..." },
+        "principles": {
+          "title": "Principiile Fracturismului",
+          "items": [
+            "Fractura ca adevăr al formei.",
+            "Fragmentul ca unitate de sens.",
+            "Tensiunea dintre absență și contur."
+          ]
+        },
+        "aesthetics": { "title": "Estetica fragmentului", "body": "Text de introdus..." },
+        "position": { "title": "Poziționare vs. alte curente", "body": "Text de introdus..." }
+      }
+    }
+  },
+
+  "meta": {
+    "home": {
+      "title": "Fracturism – Arta rupturii",
+      "description": "Un curent fondat de Teodor G. Dinică. Frumusețea imperfecțiunii."
+    },
+    "manifest": {
+      "title": "Manifestul Fracturist",
+      "description": "Principii, estetică și poziționare."
+    }
+  }
 }

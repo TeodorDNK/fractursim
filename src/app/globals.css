@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  /* Am actualizat fundalul de light-mode 
+    să fie crem (#fdfcfa), așa cum am stabilit
+    în layout.tsx, pentru consistență.
+  */
+  --background: #fdfcfa;
   --foreground: #171717;
+  --color-theme-accent: #8e6c3d; /* Am mutat accentul aici ca să fie global */
 }
 
 @theme inline {
@@ -14,8 +19,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a404d;
+    --foreground: #e5e5e5;
+    --color-theme-accent: #8e6c3d; /* Auriul se păstrează */
   }
 }
 

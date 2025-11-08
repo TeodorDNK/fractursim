@@ -1,27 +1,96 @@
 {
-  "brand": "Fracturism",
+  "brand": "Fratturismo",
   "nav": {
     "home": "Home",
     "manifest": "Manifesto",
     "gallery": "Galleria",
     "fashion": "Moda & Design",
-    "artist": "L'Artista",
-    "news": "Novità",
+    "artist": "L’Artista",
+    "news": "Notizie",
     "contact": "Contatto",
     "legal": "Legale"
   },
-  "home": {
-    "title": "Fratturismo – L'arte della rottura. La bellezza dell'imperfezione.",
-    "sub": "Un movimento fondato da Teodor G. Dinică. Un mondo frantumato in nuovi significati.",
-    "cta": "Scopri il Manifesto"
+    "contact": {
+    "title": "Scrivici un messaggio",
+    "description": "Lascia la tua e-mail e il messaggio. Ti risponderemo al più presto.",
+    "emailLabel": "E-mail",
+    "messageLabel": "Messaggio",
+    "submit": "Invia",
+    "success": "Messaggio inviato. Grazie!",
+    "error": "Invio non riuscito. Riprova."
   },
-  "footer": { "rights": "Fracturism® – tutti i diritti riservati." },
-  "manifest": { "title": "Il Manifesto Fratturista", "by": "Di Teodor G. Dinică" },
-  "gallery": { "title": "Galleria" },
-  "fashion": { "title": "Moda & Design", "disclaimer": "Fracturism®️ è un marchio registrato. Tutti i prodotti sono originali." },
-  "artist": { "title": "L'Artista" },
-  "news": { "title": "Novità" },
-  "contact": { "title": "Contatto", "note": "Fracturism®️ è un marchio protetto. L'uso del nome o del logo richiede il permesso scritto." },
-  "legal": { "title": "Legale" },
-  "lang": { "label": "Lingua" }
+  "footer": { "rights": "Fratturismo® Tutti i diritti riservati." },
+
+"home": {
+    "sections": {
+      "manifest": {
+        "title": "Manifesto",
+        "description": "Origini, principi fondamentali e posizionamento tra altri movimenti.",
+        "image": "/images/manifest.jpg",
+        "items": ["Origine dell’idea", "Principi cardinali", "Estetica del frammento"]
+      },
+      "gallery": {
+        "title": "Galleria",
+        "description": "Opere selezionate, serie chiave e studi visivi.",
+        "image": "/images/gallery.jpg",
+        "items": ["Serie tematiche", "Dettagli & macro", "Opere in corso"]
+      },
+      "fashion": {
+        "title": "Moda & Design",
+        "description": "Fratturismo in tessuti, pattern, oggetti e spazi.",
+        "image": "/images/fashion.jpg",
+        "items": ["Texture & pattern", "Capsule & collaborazioni", "Oggetti funzionali"]
+      },
+      "artist": {
+        "title": "L’Artista",
+        "description": "Teodor G. Dinică – percorso, intenti, studio.",
+        "image": "/images/artist.jpg",
+        "items": ["Bio & interviste", "Processo & materiali", "Dichiarazione d’artista"]
+      },
+      "news": {
+        "title": "Notizie",
+        "description": "Annunci, mostre e stampa.",
+        "image": "/images/news.jpg",
+        "items": ["Mostre & vernissage", "Articoli & recensioni", "Calendario eventi"]
+      },
+      "contact": {
+        "title": "Contatto",
+        "description": "Commissioni, collaborazioni, mostre. Raccontaci la tua idea.",
+        "image": "/images/contact.jpg",
+        "items": ["Commissioni su misura", "Collaborazioni", "Inviti a eventi"]
+      }
+    }
+  },
+
+  "pages": {
+    "manifest": {
+      "title": "Il Manifesto Fratturista",
+      "byline": "Di Teodor G. Dinică",
+      "epigraph": "«Non possiamo più dipingere il mondo intero, ma solo i suoi frammenti…»",
+      "sections": {
+        "origin": { "title": "Origine dell’idea", "body": "Testo introduttivo..." },
+        "principles": {
+          "title": "Principi del Fratturismo",
+          "items": [
+            "La frattura come verità della forma.",
+            "Il frammento come unità di senso.",
+            "Tensione tra assenza e contorno."
+          ]
+        },
+        "aesthetics": { "title": "Estetica del frammento", "body": "Testo introduttivo..." },
+        "position": { "title": "Posizionamento vs. altri movimenti", "body": "Testo introduttivo..." }
+      }
+    }
+  },
+
+  "meta": {
+    "home": {
+      "title": "Fratturismo – L’arte della rottura",
+      "description": "Un movimento fondato da Teodor G. Dinică."
+    },
+    "manifest": {
+      "title": "Il Manifesto Fratturista",
+      "description": "Principi, estetica e posizionamento."
+    }
+  }
 }

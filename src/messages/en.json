@@ -2,7 +2,7 @@
   "brand": "Fracturism",
   "nav": {
     "home": "Home",
-    "manifest": "Manifest",
+    "manifest": "Manifesto",
     "gallery": "Gallery",
     "fashion": "Fashion & Design",
     "artist": "The Artist",
@@ -10,18 +10,87 @@
     "contact": "Contact",
     "legal": "Legal"
   },
-  "home": {
-    "title": "Fracturism – The art of rupture. The beauty of imperfection.",
-    "sub": "A movement founded by Teodor G. Dinică. A world shattered into new meanings.",
-    "cta": "Read the Manifest"
+    "contact": {
+    "title": "Send us a message",
+    "description": "Leave your e-mail and message. We’ll get back to you shortly.",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submit": "Send",
+    "success": "Message sent. Thank you!",
+    "error": "Failed to send. Please try again."
   },
-  "footer": { "rights": "Fracturism® – all rights reserved." },
-  "manifest": { "title": "The Fracturist Manifest", "by": "By Teodor G. Dinică" },
-  "gallery": { "title": "Gallery" },
-  "fashion": { "title": "Fashion & Design", "disclaimer": "Fracturism®️ is a protected trademark. All products are original." },
-  "artist": { "title": "The Artist" },
-  "news": { "title": "News" },
-  "contact": { "title": "Contact", "note": "Fracturism®️ is a protected trademark. Use of the name or logo requires written permission." },
-  "legal": { "title": "Legal" },
-  "lang": { "label": "Language" }
+  "footer": { "rights": "Fracturism® All rights reserved." },
+
+"home": {
+    "sections": {
+      "manifest": {
+        "title": "Manifesto",
+        "description": "Origins, core principles and positioning among other movements.",
+        "image": "/images/manifest.jpg",
+        "items": ["Origin of the idea", "Cardinal principles", "Aesthetics of the fragment"]
+      },
+      "gallery": {
+        "title": "Gallery",
+        "description": "Selected works, key series and visual studies.",
+        "image": "/images/gallery.jpg",
+        "items": ["Thematic series", "Details & macro", "Works in progress"]
+      },
+      "fashion": {
+        "title": "Fashion & Design",
+        "description": "Fracturism in textiles, patterns, objects and spaces.",
+        "image": "/images/fashion.jpg",
+        "items": ["Textures & patterns", "Capsules & collabs", "Functional objects"]
+      },
+      "artist": {
+        "title": "The Artist",
+        "description": "Teodor G. Dinică – path, intentions, studio.",
+        "image": "/images/artist.jpg",
+        "items": ["Bio & interviews", "Process & materials", "Artist statement"]
+      },
+      "news": {
+        "title": "News",
+        "description": "Announcements, exhibitions and press.",
+        "image": "/images/news.jpg",
+        "items": ["Exhibitions & openings", "Articles & reviews", "Events calendar"]
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "Commissions, collaborations, exhibitions. Tell us what you have in mind.",
+        "image": "/images/contact.jpg",
+        "items": ["Custom commissions", "Collaborations", "Event invitations"]
+      }
+    }
+  },
+
+  "pages": {
+    "manifest": {
+      "title": "The Fracturist Manifesto",
+      "byline": "By Teodor G. Dinică",
+      "epigraph": "“We can no longer paint the whole world, only its shards…”",
+      "sections": {
+        "origin": { "title": "Origin of the Idea", "body": "Intro text..." },
+        "principles": {
+          "title": "Principles of Fracturism",
+          "items": [
+            "Fracture as truth of form.",
+            "The fragment as a unit of meaning.",
+            "Tension between absence and contour."
+          ]
+        },
+        "aesthetics": { "title": "Aesthetics of the Fragment", "body": "Intro text..." },
+        "position": { "title": "Positioning vs. other movements", "body": "Intro text..." }
+      }
+    }
+  },
+
+  "meta": {
+    "home": {
+      "title": "Fracturism – The Art of Rupture",
+      "description": "A movement founded by Teodor G. Dinică."
+    },
+    "manifest": {
+      "title": "The Fracturist Manifesto",
+      "description": "Principles, aesthetics and positioning."
+    }
+  }
 }
