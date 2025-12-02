@@ -117,16 +117,16 @@ export default async function FashionDesignPage({
 
   const collections: Collection[] =
     (t?.fashion?.collections as Collection[]) ?? [
-      { slug: "capsula-ritm-fracturat", title: "Capsula • Ritm fracturat", blurb: "Silhuete curate, tăieturi asimetrice și imprimeuri care păstrează amprenta fisurii.", cover: "/images/ornament.png", season: "AW 2025" },
-      { slug: "texturi-ceramica-textil", title: "Texturi • Ceramică & Textil", blurb: "Dialog între porozitatea ceramicii și moliciunea fibrelor. Suprafețe care respiră.", cover: "/images/separeu.png", season: "SS 2025" },
-      { slug: "obiecte-pentru-interior", title: "Obiecte pentru interior", blurb: "Corpuri mici de lumină, tăvi, suporturi, toate compuse din motive recurente.", cover: "/images/moneda.png" },
+      { slug: "capsula-ritm-fracturat", title: "Capsula • Ritm fracturat", blurb: "Silhuete curate, tăieturi asimetrice și imprimeuri care păstrează amprenta fisurii.", cover: "/images/1.jpg", season: "AW 2025" },
+      { slug: "texturi-ceramica-textil", title: "Texturi • Ceramică & Textil", blurb: "Dialog între porozitatea ceramicii și moliciunea fibrelor. Suprafețe care respiră.", cover: "/images/2.jpg", season: "SS 2025" },
+      { slug: "obiecte-pentru-interior", title: "Obiecte pentru interior", blurb: "Corpuri mici de lumină, tăvi, suporturi, toate compuse din motive recurente.", cover: "/images/3.jpg" },
     ];
 
-  const looks: Look[] = [
-    { src: "/images/profil.webp", alt: "Look 01", caption: "Portret/print" },
-    { src: "/images/floare.png", alt: "Look 02", caption: "Motiv floral" },
-    { src: "/images/ornament.png", alt: "Look 03", caption: "Ornament repetat" },
-  ];
+  // const looks: Look[] = [
+  //   { src: "/images/profil.webp", alt: "Look 01", caption: "Portret/print" },
+  //   { src: "/images/floare.png", alt: "Look 02", caption: "Motiv floral" },
+  //   { src: "/images/ornament.png", alt: "Look 03", caption: "Ornament repetat" },
+  // ];
 
   const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://fracturism.tld";
   const jsonld = {
@@ -197,7 +197,7 @@ export default async function FashionDesignPage({
               Lookbook
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {looks.map((l, i) => (
+              {/* {looks.map((l, i) => (
                 <figure key={i} className="rounded-xl overflow-hidden border border-white/15 bg-black/10">
                   <div className="relative w-full flex items-center justify-center h-[300px] sm:h-[360px] lg:h-[420px] bg-black/10">
                     <img
@@ -210,7 +210,7 @@ export default async function FashionDesignPage({
                   </div>
                   {l.caption ? <figcaption className="p-3 text-sm text-zinc-300">{l.caption}</figcaption> : null}
                 </figure>
-              ))}
+              ))} */}
             </div>
           </section>
 

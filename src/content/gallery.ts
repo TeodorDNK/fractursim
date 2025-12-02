@@ -17,32 +17,25 @@ export function getGalleryItems(locale: string): GalleryItem[] {
       slug: "portret-si-materie",
     },
     {
-      src: "/images/moneda.png",
+      src: "/images/1.jpg",
       title: "Moneda Fracturistă",
       caption:
         "O emblemă care adună fisuri și le alchimizează în simbol. Valoarea nu e netedă.",
       slug: "moneda-fracturista",
     },
     {
-      src: "/images/ornament.png",
+      src: "/images/2.jpg",
       title: "Ornament, Ordine, Ruptură",
       caption:
         "Ordinea se naște din tensiune. Un limbaj decorativ din fărâme coerente.",
       slug: "ornament-ordine-ruptura",
     },
     {
-      src: "/images/separeu.png",
+      src: "/images/3.jpg",
       title: "Separator",
       caption:
         "O pauză vizuală care taie și unește. Respirația dintre două intenții.",
       slug: "separator",
-    },
-    {
-      src: "/images/floare.png",
-      title: "Floare Fracturistă",
-      caption:
-        "Nu o petală perfectă, ci un motiv decupat – o floare care își amintește fisura.",
-      slug: "floare-fracturista",
     },
   ];
 }

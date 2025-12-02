@@ -136,9 +136,9 @@ export default async function NewsIndex({ params }: { params: Promise<{ locale: 
         cover: x.cover ?? "/images/ornament.png",
         readingTime: x.readingTime ?? "4 min",
       }))) || [
-      { slug: "manifest-si-ruptura", title: "Manifest și ruptură: un limbaj vizual viu", excerpt: "Cum transformă Fracturismul tensiunea dintre ordine și accident într-un manifest plastic coerent.", date: "2025-10-01", cover: "/images/moneda.png", readingTime: "5 min" },
-      { slug: "ateliere-si-intalniri", title: "Ateliere și întâlniri deschise", excerpt: "Programul atelierelor din toamnă: exerciții practice, discuții despre compoziție și ritm fracturat.", date: "2025-10-18", cover: "/images/separeu.png", readingTime: "3 min" },
-      { slug: "povestea-unui-ornament", title: "Povestea unui ornament", excerpt: "Din fisură în motiv recurent: traseul unei forme care își găsește locul într-o serie.", date: "2025-11-01", cover: "/images/floare.png", readingTime: "4 min" },
+      { slug: "manifest-si-ruptura", title: "Manifest și ruptură: un limbaj vizual viu", excerpt: "Cum transformă Fracturismul tensiunea dintre ordine și accident într-un manifest plastic coerent.", date: "2025-10-01", cover: "/images/1.jpg", readingTime: "5 min" },
+      { slug: "ateliere-si-intalniri", title: "Ateliere și întâlniri deschise", excerpt: "Programul atelierelor din toamnă: exerciții practice, discuții despre compoziție și ritm fracturat.", date: "2025-10-18", cover: "/images/2.jpg", readingTime: "3 min" },
+      { slug: "povestea-unui-ornament", title: "Povestea unui ornament", excerpt: "Din fisură în motiv recurent: traseul unei forme care își găsește locul într-o serie.", date: "2025-11-01", cover: "/images/3.jpg", readingTime: "4 min" },
     ];
 
   // JSON-LD ca ItemList cu NewsArticle
