@@ -64,7 +64,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ ok: true, id: info.messageId });
   } catch (err: any) {
-    console.error("CONTACT_API_ERROR", err);
+console.error("CONTACT_API_ERROR", err, err.response, err.responseCode);
     return NextResponse.json(
       { ok: false, error: "Nu s-a putut trimite mesajul. Încearcă mai târziu." },
       { status: 500 }
