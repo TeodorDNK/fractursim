@@ -29,6 +29,11 @@ export async function POST(req: Request) {
       SMTP_PASS,
       CONTACT_TO_EMAIL,
     } = process.env;
+console.log("SERVER_EMAIL_CONFIG", {
+  SMTP_USER,
+  CONTACT_TO_EMAIL
+});
+
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !CONTACT_TO_EMAIL) {
       return NextResponse.json(
