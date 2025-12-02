@@ -123,7 +123,7 @@ export default async function FashionDesignPage({
     ];
 
   const looks: Look[] = [
-    { src: "/images/profil.jpeg", alt: "Look 01", caption: "Portret/print" },
+    { src: "/images/profil.webp", alt: "Look 01", caption: "Portret/print" },
     { src: "/images/floare.png", alt: "Look 02", caption: "Motiv floral" },
     { src: "/images/ornament.png", alt: "Look 03", caption: "Ornament repetat" },
   ];

@@ -194,7 +194,7 @@ export default async function Home({
               <div className="md:col-span-1 flex justify-center">
                 {/* folosim <img> simplu pentru a nu forța Next/Image aici */}
                 <img
-                  src="/images/profil.jpeg"
+                  src="/images/profil.webp"
                   alt={t.home?.artistSection?.name ?? "Portret artist"}
                   width={295}
                   height={393}

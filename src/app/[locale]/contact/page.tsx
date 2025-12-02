@@ -154,7 +154,7 @@ export default async function ContactPage({
             <div className="flex justify-center">
               <div className="relative rounded-xl overflow-hidden border border-white/20 shadow-lg max-w-sm">
                 <Image
-                  src="/images/profil.jpeg"
+                  src="/images/profil.webp"
                   alt="Portret Fracturism"
                   width={600}
                   height={600}

@@ -121,7 +121,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ locale:
     "jobTitle": "Artist vizual",
     "url": `${SITE}/${locale}/artistul`,
     "knowsAbout": ["Fracturism", "Artă contemporană", "Compoziție", "Textură"],
-    "image": `${SITE}/images/profil.jpeg`,
+    "image": `${SITE}/images/profil.webp`,
     "description": subtitle,
     "nationality": "RO",
     "sameAs": [
@@ -153,7 +153,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ locale:
               {/* Portret */}
               <div className="md:col-span-1 flex justify-center">
                 <img
-                  src="/images/profil.jpeg"
+                  src="/images/profil.webp"
                   alt={title}
                   width={295}
                   height={393}

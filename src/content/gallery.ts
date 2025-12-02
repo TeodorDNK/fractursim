@@ -10,7 +10,7 @@ export function getGalleryItems(locale: string): GalleryItem[] {
   // poți înlocui cu t.gallery?.items când ai traducerile
   return [
     {
-      src: "/images/profil.jpeg",
+      src: "/images/profil.webp",
       title: "Portret și Materie",
       caption:
         "Chipul din apropiere devine textură. Fractura nu ascunde, dezvăluie – o poartă spre sens.",
