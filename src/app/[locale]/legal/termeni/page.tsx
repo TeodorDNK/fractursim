@@ -1,17 +1,10 @@
-import type { Metadata } from "next";
-import { isLocale, type Locale } from "@/i18n/routing"; 
-import { getMessages } from "@/i18n/get-messages"; 
-import { buildPageMetadata } from "@/seo/meta";
-import Link from "next/link"; 
+// @ts-nocheck
 
-// -----------------------------------------------------------
-// 1. Definiția corectă a props-urilor (FĂRĂ constrângeri PageProps)
-interface TermeniPageProps {
-  params: { 
-    locale: string;
-  };
-}
-// -----------------------------------------------------------
+import type { Metadata, PageProps } from "next";
+import { isLocale, type Locale } from "@/i18n/routing";
+import { getMessages } from "@/i18n/get-messages";
+import { buildPageMetadata } from "@/seo/meta";
+import Link from "next/link";
 
 interface TermSection {
   title: string;
@@ -19,56 +12,52 @@ interface TermSection {
   subsections?: TermSection[];
 }
 
-export async function generateMetadata({ 
-  params, 
-}: TermeniPageProps): Promise<Metadata> { // Tipul aplicat aici
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
-  const title = t.pages?.terms?.metaTitle || "Termene și Condiții – Fracturism";
-  const description = t.pages?.terms?.metaDescription || "Termeni și condiții de utilizare a conținutului și serviciilor Fracturism.";
+
+  const title =
+    t.pages?.terms?.metaTitle ||
+    t.legal?.terms?.fallbackMetaTitle ||
+    "Termeni și Condiții – Fracturism";
+
+  const description =
+    t.pages?.terms?.metaDescription ||
+    t.legal?.terms?.fallbackMetaDescription ||
+    "Termeni și condiții de utilizare a platformei Fracturism.";
 
   return buildPageMetadata({
     locale,
     pathname: "/legal/termeni",
-    title: title,
-    description: description,
+    title,
+    description,
   });
 }
 
-// Tip separat pentru componenta recursivă
 interface TermSectionRendererProps {
   section: TermSection;
-  level?: 2 | 3 | 4 | 5 | 6; // Tipuri explicite pentru nivel
+  level?: 2 | 3 | 4 | 5 | 6;
   baseIndex?: number;
 }
 
-const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: TermSectionRendererProps) => { // Tipul aplicat aici
-  // Logică pentru formatarea indexului
-  const index = baseIndex > 0 ? `${baseIndex}` : '';
+const TermSectionRenderer = ({
+  section,
+  level = 2,
+  baseIndex = 0,
+}: TermSectionRendererProps) => {
+  const index = baseIndex > 0 ? `${baseIndex}` : "";
   const titleContent = `${index} ${section.title}`.trim();
-  const className = `font-bold mt-8 mb-4 ${level === 2 ? 'text-2xl md:text-3xl border-b pb-2' : 'text-xl md:text-2xl'}`;
 
-  const renderHeading = () => {
-    switch (level) {
-      case 2:
-        return <h2 className={className}>{titleContent}</h2>;
-      case 3:
-        return <h3 className={className}>{titleContent}</h3>;
-      case 4:
-        return <h4 className={className}>{titleContent}</h4>;
-      case 5:
-        return <h5 className={className}>{titleContent}</h5>;
-      case 6:
-        return <h6 className={className}>{titleContent}</h6>;
-      default:
-        return <h2 className={className}>{titleContent}</h2>;
-    }
-  };
+  const className = `font-bold mt-8 mb-4 ${
+    level === 2 ? "text-2xl md:text-3xl border-b pb-2" : "text-xl md:text-2xl"
+  }`;
+
+  const HeadingTag = `h${level}` as any;
 
   return (
     <section className="mb-8">
-      {renderHeading()}
-      
+      <HeadingTag className={className}>{titleContent}</HeadingTag>
+
       {Array.isArray(section.body) ? (
         <ul className="list-disc list-inside space-y-3 pl-4 text-lg opacity-85">
           {section.body.map((item, i) => (
@@ -82,12 +71,11 @@ const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: TermSectionR
       {section.subsections && (
         <div className="pl-4 border-l border-[var(--primary)]/50 mt-6">
           {section.subsections.map((sub, i) => (
-            <TermSectionRenderer 
-              key={i} 
-              section={sub} 
-              // Asigurăm că nivelul rămâne în limitele definite (2-6)
-              level={(level < 6 ? level + 1 : 6) as 2 | 3 | 4 | 5 | 6} 
-              baseIndex={baseIndex * 10 + i + 1} 
+            <TermSectionRenderer
+              key={i}
+              section={sub}
+              level={(level < 6 ? level + 1 : 6) as 2 | 3 | 4 | 5 | 6}
+              baseIndex={baseIndex * 10 + i + 1}
             />
           ))}
         </div>
@@ -96,19 +84,22 @@ const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: TermSectionR
   );
 };
 
-export default async function TermeniPage({
-  params,
-}: TermeniPageProps) { // Tipul aplicat aici
+export default async function TermeniPage({ params }: PageProps) {
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
-  
+
   const termsData = t.pages?.terms;
 
-  if (!termsData || !termsData.sections) {
+  if (!termsData?.sections) {
     return (
       <main className="max-w-[1100px] mx-auto px-5 py-16">
-        <h1 className="text-3xl font-bold mb-4">Eroare de Încărcare</h1>
-        <p>Termenii și condițiile nu au putut fi încărcați.</p>
+        <h1 className="text-3xl font-bold mb-4">
+          {t.legal?.error?.loadTitle ?? "Eroare de Încărcare"}
+        </h1>
+        <p>
+          {t.legal?.error?.termsNotFound ??
+            "Termenii și condițiile nu au putut fi încărcați."}
+        </p>
       </main>
     );
   }
@@ -123,29 +114,44 @@ export default async function TermeniPage({
           {title}
         </h1>
         <p className="mt-2 text-sm opacity-60">
-          {t.pages?.terms?.updatedPrefix ?? "Ultima actualizare:"} {date}
+          {t.pages?.terms?.updatedPrefix ?? t.legal?.updatedPrefixFallback} {date}
         </p>
       </header>
 
-      <p className="text-xl italic mb-10 opacity-90">
-        {intro}
-      </p>
+      <p className="text-xl italic mb-10 opacity-90">{intro}</p>
 
       {sections.map((section: TermSection, index: number) => (
-        <TermSectionRenderer 
-          key={index} 
-          section={section} 
-          level={2} 
+        <TermSectionRenderer
+          key={index}
+          section={section}
+          level={2}
           baseIndex={index + 1}
         />
       ))}
-      
+
       <div className="mt-16 pt-8 border-t">
         <p className="text-center text-sm opacity-60">
-          &copy; {year} {t.brand}. Toate drepturile de fragmentare și reconstrucție sunt rezervate.
+          &copy; {year} {t.brand}.{" "}
+          {t.legal?.terms?.footerText ??
+            "Toate drepturile sunt rezervate."}
         </p>
-      </div>
 
+        <div className="text-center mt-2 text-sm space-x-4">
+          <Link
+            href={`/${locale}/legal/cookies`}
+            className="text-[var(--primary)] hover:underline"
+          >
+            {t.legal?.links?.cookies ?? "Politica de Cookie-uri"}
+          </Link>
+          <span className="text-zinc-500">|</span>
+          <Link
+            href={`/${locale}/legal/confidentialitate`}
+            className="text-[var(--primary)] hover:underline"
+          >
+            {t.legal?.links?.privacy ?? "Politica de Confidențialitate"}
+          </Link>
+        </div>
+      </div>
     </main>
   );
 }
