@@ -7,8 +7,18 @@ import { buildPageMetadata } from "@/seo/meta";
 
 /** pictogramă colorabilă la accent */
 function TintedIcon({
-  src, width, height, alt, className,
-}: { src: string; width: number; height: number; alt: string; className?: string }) {
+  src,
+  width,
+  height,
+  alt,
+  className,
+}: {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  className?: string;
+}) {
   return (
     <span
       role="img"
@@ -37,17 +47,39 @@ const FrameColumn = ({ position }: { position: "left" | "right" }) => {
   const ornamentUrl = "/images/floare.png";
   const borderStyle =
     position === "left"
-      ? { borderLeft: "5px solid var(--color-theme-accent)", borderRight: "2px solid var(--color-theme-accent)" }
-      : { borderRight: "5px solid var(--color-theme-accent)", borderLeft: "2px solid var(--color-theme-accent)" };
+      ? {
+          borderLeft: "5px solid var(--color-theme-accent)",
+          borderRight: "2px solid var(--color-theme-accent)",
+        }
+      : {
+          borderRight: "5px solid var(--color-theme-accent)",
+          borderLeft: "2px solid var(--color-theme-accent)",
+        };
   const topTransform = position === "left" ? "none" : "scaleX(-1)";
   const bottomTransform = position === "left" ? "scaleY(-1)" : "scale(-1, -1)";
   return (
-    <div className="hidden md:flex flex-col justify-between p-5" style={{ minHeight: "100vh", flexBasis: "100px", flexShrink: 0 }}>
-      <figure className={position === "right" ? "self-end" : "self-start"} style={{ transform: topTransform as any }}>
+    <div
+      className="hidden md:flex flex-col justify-between p-5"
+      style={{
+        minHeight: "100vh",
+        flexBasis: "100px",
+        flexShrink: 0,
+      }}
+    >
+      <figure
+        className={position === "right" ? "self-end" : "self-start"}
+        style={{ transform: topTransform as any }}
+      >
         <TintedIcon src={ornamentUrl} alt="Ornament" width={60} height={60} />
       </figure>
-      <div className="flex-1 w-2 mx-auto my-[-3px]" style={borderStyle} />
-      <figure className={position === "right" ? "self-end" : "self-start"} style={{ transform: bottomTransform as any }}>
+      <div
+        className="flex-1 w-2 mx-auto my-[-3px]"
+        style={borderStyle}
+      />
+      <figure
+        className={position === "right" ? "self-end" : "self-start"}
+        style={{ transform: bottomTransform as any }}
+      >
         <TintedIcon src={ornamentUrl} alt="Ornament" width={60} height={60} />
       </figure>
     </div>
@@ -62,12 +94,13 @@ export async function generateMetadata({ params }: ParamsP): Promise<Metadata> {
   const locale = isLocale(raw) ? (raw as Locale) : "ro";
   const t = await getMessages(locale);
 
+  // Folosind t.meta?.artist
   return buildPageMetadata({
     locale,
     pathname: "/artistul",
-    title: t.meta?.artist?.title ?? "Teodor G. Dinică – Artistul",
+    title: t.meta.artist?.title ?? "Teodor G. Dinică – Artistul",
     description:
-      t.meta?.artist?.description ??
+      t.meta.artist?.description ??
       "Autorul Fracturismului. Biografie, viziune și lucrări.",
   });
 }
@@ -83,12 +116,16 @@ function JsonLd({ data }: { data: Record<string, any> }) {
   );
 }
 
-export default async function ArtistPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function ArtistPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? (raw as Locale) : "ro";
   const t = await getMessages(locale);
 
-  // text i18n (cu fallback)
+  // Extragerea textelor din i18n cu fallback-uri
   const title = t.artist?.title ?? "Teodor G. Dinică";
   const subtitle =
     t.artist?.subtitle ?? "Fracturism – Beyond Perfection, Within the Cracks";
@@ -101,10 +138,26 @@ export default async function ArtistPage({ params }: { params: Promise<{ locale:
   const bioP3 =
     t.artist?.bio?.p3 ??
     "În lucrările sale, „defectul” devine limbaj, iar accidentul – metodă. Fractura e tratată ca resursă, nu ca piedică.";
+  const themesTitle = t.artist?.themesTitle ?? "Teme & preocupări";
   const themes = t.artist?.themes ?? [
     "Frumusețea imperfecțiunii",
     "Texturi fracturate și compoziții stratificate",
     "Ordinea care răsare din haos",
+  ];
+  const timelineTitle = t.artist?.timelineTitle ?? "Repere";
+  const timeline = t.artist?.timeline ?? [
+    {
+      year: "2018–2020",
+      text: "Explorări în compoziții fragmentare și mixed-media.",
+    },
+    {
+      year: "2021–2023",
+      text: "Consolidarea limbajului vizual Fracturist.",
+    },
+    {
+      year: "2024–prezent",
+      text: "Serii tematice: ruptură, cicatrizare, memorie materială.",
+    },
   ];
   const quoteText =
     t.artist?.quote?.text ?? "„Fracturism – A New Language of Fragments.”";
@@ -124,10 +177,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ locale:
     "image": `${SITE}/images/profil.webp`,
     "description": subtitle,
     "nationality": "RO",
-    "sameAs": [
-      `${SITE}/${locale}/manifest`,
-      `${SITE}/${locale}/galerie`
-    ],
+    "sameAs": [`${SITE}/${locale}/manifest`, `${SITE}/${locale}/galerie`],
   };
 
   return (
@@ -181,7 +231,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ locale:
                     className="font-[var(--font-arhaic)] text-2xl mb-3"
                     style={{ color: "var(--color-theme-accent)" }}
                   >
-                    {t.artist?.themesTitle ?? "Teme & preocupări"}
+                    {themesTitle}
                   </h2>
                   <ul className="list-disc pl-5 space-y-1">
                     {themes.map((th: string, i: number) => (
@@ -193,40 +243,34 @@ export default async function ArtistPage({ params }: { params: Promise<{ locale:
             </div>
           </section>
 
-          {/* timeline minimalist (opțional) */}
-{/* timeline minimalist (doar ornamentul modificat) */}
-<section className="py-16 px-6">
-  <div className="max-w-4xl mx-auto">
-    {/* ornament centrat și mai mare */}
-    <div className="flex justify-center mb-8">
-      <TintedIcon
-        src="/images/ornament.png"
-        alt="Ornament"
-        width={480}   // ← ajustezi dimensiunea aici
-        height={110}   // ← și aici
-        className="opacity-90"
-      />
-    </div>
+          {/* timeline minimalist (doar ornamentul modificat) */}
+          <section className="py-16 px-6">
+            <div className="max-w-4xl mx-auto">
+              {/* ornament centrat și mai mare */}
+              <div className="flex justify-center mb-8">
+                <TintedIcon
+                  src="/images/ornament.png"
+                  alt="Ornament"
+                  width={480} // ← ajustezi dimensiunea aici
+                  height={110} // ← și aici
+                  className="opacity-90"
+                />
+              </div>
 
-    <h2 className="font-[var(--font-arhaic)] text-3xl text-center mb-10">
-      {t.artist?.timelineTitle ?? "Repere"}
-    </h2>
+              <h2 className="font-[var(--font-arhaic)] text-3xl text-center mb-10">
+                {timelineTitle}
+              </h2>
 
-    <div className="space-y-6">
-      {(t.artist?.timeline ?? [
-        { year: "2018–2020", text: "Explorări în compoziții fragmentare și mixed-media." },
-        { year: "2021–2023", text: "Consolidarea limbajului vizual Fracturist." },
-        { year: "2024–prezent", text: "Serii tematice: ruptură, cicatrizare, memorie materială." },
-      ]).map((it: any, idx: number) => (
-        <div key={idx} className="grid grid-cols-[110px_1fr] gap-4">
-          <div className="text-zinc-400">{it.year}</div>
-          <div className="text-zinc-100">{it.text}</div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+              <div className="space-y-6">
+                {timeline.map((it: any, idx: number) => (
+                  <div key={idx} className="grid grid-cols-[110px_1fr] gap-4">
+                    <div className="text-zinc-400">{it.year}</div>
+                    <div className="text-zinc-100">{it.text}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
 
           {/* citat */}
           <section className="py-12">
@@ -265,7 +309,10 @@ export default async function ArtistPage({ params }: { params: Promise<{ locale:
         {/* footer decorativ al paginii */}
         <footer className="py-12 border-t border-white/20">
           <div className="text-center max-w-5xl mx-auto px-6">
-            <p className="font-[var(--font-arhaic)] text-2xl" style={{ color: "var(--color-theme-accent)", lineHeight: "0" }}>
+            <p
+              className="font-[var(--font-arhaic)] text-2xl"
+              style={{ color: "var(--color-theme-accent)", lineHeight: "0" }}
+            >
               ✦
             </p>
           </div>

@@ -9,7 +9,6 @@
   --foreground: #171717;
   --color-theme-accent: #8e6c3d; /* Am mutat accentul aici ca să fie global */
 }
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

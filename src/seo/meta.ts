@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { locales } from "@/i18n/routing";
 
-export const SITE_BASE = "https://fracturism.example.com"; // schimbă cu domeniul tău
+export const SITE_BASE = "https://www.fracturismart.com/"
 
 export function buildI18nAlternates(pathname: string, currentLocale: string) {
   const languages: Record<string, string> = {};

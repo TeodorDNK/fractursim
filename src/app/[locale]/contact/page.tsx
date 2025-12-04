@@ -94,7 +94,7 @@ export async function generateMetadata({ params }: ParamsP): Promise<Metadata> {
     title: t.meta?.contact?.title ?? "Contact – Fracturism",
     description:
       t.meta?.contact?.description ??
-      "Contactează echipa Fracturism pentru colaborări, expoziții și dialog artistic.",
+     "Contactează echipa Fracturism pentru colaborări, expoziții și dialog artistic.",
   });
 }
 
@@ -103,6 +103,7 @@ function JsonLd({ data }: { data: Record<string, any> }) {
   return (
     <script
       type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
@@ -117,10 +118,16 @@ export default async function ContactPage({
   const locale = isLocale(raw) ? (raw as Locale) : "ro";
   const t = await getMessages(locale);
 
+  // Extragerea textelor din i18n
   const title = t.contact?.title ?? "Contact";
   const subtitle =
     t.contact?.subtitle ??
     "Pentru colaborări, expoziții sau interviuri, ne poți scrie direct.";
+  const formTitle = t.contact?.formTitle ?? "Trimite-ne un mesaj";
+  const namePlaceholder = t.contact?.form?.namePlaceholder ?? "Nume";
+  const emailPlaceholder = t.contact?.form?.emailPlaceholder ?? "Email";
+  const messagePlaceholder = t.contact?.form?.messagePlaceholder ?? "Mesaj";
+  const submitButton = t.contact?.form?.submit ?? "Trimite";
 
   const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://fracturism.tld";
   const jsonld = {
@@ -169,7 +176,7 @@ export default async function ContactPage({
                 className="font-[var(--font-arhaic)] text-2xl mb-4"
                 style={{ color: "var(--color-theme-accent)" }}
               >
-                Trimite-ne un mesaj
+                {formTitle}
               </h2>
 
               {ContactForm ? (
@@ -178,18 +185,18 @@ export default async function ContactPage({
                 <form className="space-y-4">
                   <input
                     type="text"
-                    placeholder="Nume"
+                    placeholder={namePlaceholder}
                     className="w-full bg-black/20 border border-white/20 rounded-lg p-3 text-white focus:outline-none focus:border-[var(--color-theme-accent)]"
                     required
                   />
                   <input
                     type="email"
-                    placeholder="Email"
+                    placeholder={emailPlaceholder}
                     className="w-full bg-black/20 border border-white/20 rounded-lg p-3 text-white focus:outline-none focus:border-[var(--color-theme-accent)]"
                     required
                   />
                   <textarea
-                    placeholder="Mesaj"
+                    placeholder={messagePlaceholder}
                     rows={5}
                     className="w-full bg-black/20 border border-white/20 rounded-lg p-3 text-white focus:outline-none focus:border-[var(--color-theme-accent)]"
                     required
@@ -198,15 +205,38 @@ export default async function ContactPage({
                     type="submit"
                     className="px-6 py-3 rounded-lg border border-white/30 bg-black/30 hover:bg-black/50 text-white transition"
                   >
-                    Trimite
+                    {submitButton}
                   </button>
                 </form>
               )}
 
               <div className="mt-8 text-sm text-zinc-300 space-y-1">
-                <p>Email: <a href="mailto:contact@fracturism.tld" className="underline">contact@fracturism.tld</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/resume_cloud_official" target="_blank" className="underline">@resume_cloud_official</a></p>
-                <p>Facebook: <a href="https://www.facebook.com/share/17VSijXPsq/?mibextid=wwXIfr" target="_blank" className="underline">Fracturism</a></p>
+                <p>
+                  {t.contact?.social?.email ?? "Email"}:{" "}
+                  <a href="mailto:contact@fracturism.tld" className="underline">
+                    contact@fracturism.tld
+                  </a>
+                </p>
+                <p>
+                  {t.contact?.social?.instagram ?? "Instagram"}:{" "}
+                  <a
+                    href="https://www.instagram.com/resume_cloud_official"
+                    target="_blank"
+                    className="underline"
+                  >
+                    @resume_cloud_official
+                  </a>
+                </p>
+                <p>
+                  {t.contact?.social?.facebook ?? "Facebook"}:{" "}
+                  <a
+                    href="https://www.facebook.com/share/17VSijXPsq/?mibextid=wwXIfr"
+                    target="_blank"
+                    className="underline"
+                  >
+                    Fracturism
+                  </a>
+                </p>
               </div>
             </div>
           </div>

@@ -76,10 +76,11 @@ export async function generateMetadata({ params }: ParamsP): Promise<Metadata> {
   return buildPageMetadata({
     locale,
     pathname: "/moda-design",
-    title: t?.meta?.fashion?.title ?? "Modă & Design – Fracturism",
+    // Fallback-uri generice (Engleză)
+    title: t?.meta?.fashion?.title ?? "Fashion & Design – Fracturism",
     description:
       t?.meta?.fashion?.description ??
-      "Colecții capsulă, obiecte și textile influențate de limbajul Fracturist.",
+      "Capsule collections, objects, and textiles influenced by the Fracturist language.",
   });
 }
 
@@ -109,24 +110,20 @@ export default async function FashionDesignPage({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? (raw as Locale) : "ro";
   const t = await getMessages(locale);
+  
+  // Extragerea conținutului i18n
+  const fashionContent = t?.fashion;
+  const title = fashionContent?.title ?? "Fashion & Design";
+  const dek = fashionContent?.subtitle ?? "Fractured forms, ornamental rhythm, and natural materials—applied to fashion, objects, and space.";
+  const collections: Collection[] = (fashionContent?.collections as Collection[]) ?? [];
+  const sectionTitleCollections = fashionContent?.sectionTitleCollections ?? "Collections";
+  const sectionTitleMaterials = fashionContent?.sectionTitleMaterials ?? "Materials & Process";
+  const sectionTitleLookbook = fashionContent?.sectionTitleLookbook ?? "Lookbook";
+  const linkTextCollection = fashionContent?.linkTextCollection ?? "View collection →";
+  const materialsList: string[] = (fashionContent?.materialsList as string[]) ?? [];
+  const ctaText = fashionContent?.ctaText ?? "Looking for collaboration or special editions?";
+  const ctaLink = fashionContent?.ctaLink ?? "Write to us →";
 
-  const title = t?.fashion?.title ?? "Modă & Design";
-  const dek =
-    t?.fashion?.subtitle ??
-    "Forme fracturate, ritm ornamental și materiale naturale — aplicate pe modă, obiect și spațiu.";
-
-  const collections: Collection[] =
-    (t?.fashion?.collections as Collection[]) ?? [
-      { slug: "capsula-ritm-fracturat", title: "Capsula • Ritm fracturat", blurb: "Silhuete curate, tăieturi asimetrice și imprimeuri care păstrează amprenta fisurii.", cover: "/images/1.jpg", season: "AW 2025" },
-      { slug: "texturi-ceramica-textil", title: "Texturi • Ceramică & Textil", blurb: "Dialog între porozitatea ceramicii și moliciunea fibrelor. Suprafețe care respiră.", cover: "/images/2.jpg", season: "SS 2025" },
-      { slug: "obiecte-pentru-interior", title: "Obiecte pentru interior", blurb: "Corpuri mici de lumină, tăvi, suporturi, toate compuse din motive recurente.", cover: "/images/3.jpg" },
-    ];
-
-  // const looks: Look[] = [
-  //   { src: "/images/profil.webp", alt: "Look 01", caption: "Portret/print" },
-  //   { src: "/images/floare.png", alt: "Look 02", caption: "Motiv floral" },
-  //   { src: "/images/ornament.png", alt: "Look 03", caption: "Ornament repetat" },
-  // ];
 
   const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://fracturism.tld";
   const jsonld = {
@@ -158,10 +155,10 @@ export default async function FashionDesignPage({
         </header>
 
         <main className="px-6 pb-16 space-y-16">
-          {/* Colecții: imagine completă, fără tăiere */}
+          {/* Colecții */}
           <section>
             <h2 className="font-[var(--font-arhaic)] text-2xl mb-6" style={{ color: "var(--color-theme-accent)" }}>
-              Colecții
+              {sectionTitleCollections}
             </h2>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -178,12 +175,12 @@ export default async function FashionDesignPage({
                       />
                     </div>
                     <div className="p-5">
-                      <p className="text-sm text-zinc-400">{c.season ?? "Capsulă"}</p>
+                      <p className="text-sm text-zinc-400">{c.season ?? fashionContent?.defaultSeasonTag ?? "Capsule"}</p>
                       <h3 className="font-[var(--font-arhaic)] text-xl mt-1" style={{ color: "var(--color-theme-accent)" }}>
                         {c.title}
                       </h3>
                       <p className="mt-2 font-serif text-zinc-100 line-clamp-3">{c.blurb}</p>
-                      <span className="mt-3 inline-block text-sm underline underline-offset-4 text-zinc-300">Vezi colecția →</span>
+                      <span className="mt-3 inline-block text-sm underline underline-offset-4 text-zinc-300">{linkTextCollection}</span>
                     </div>
                   </Link>
                 </article>
@@ -191,48 +188,34 @@ export default async function FashionDesignPage({
             </div>
           </section>
 
-          {/* Lookbook: imagine completă, fără tăiere */}
+          {/* Lookbook (Sectiune comentata in codul original, pastram titlul i18n pentru viitor) */}
           <section>
             <h2 className="font-[var(--font-arhaic)] text-2xl mb-6" style={{ color: "var(--color-theme-accent)" }}>
-              Lookbook
+              {sectionTitleLookbook}
             </h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {/* {looks.map((l, i) => (
-                <figure key={i} className="rounded-xl overflow-hidden border border-white/15 bg-black/10">
-                  <div className="relative w-full flex items-center justify-center h-[300px] sm:h-[360px] lg:h-[420px] bg-black/10">
-                    <img
-                      src={l.src}
-                      alt={l.alt}
-                      className="max-h-full max-w-full h-auto w-auto object-contain"
-                      loading="lazy"
-                      draggable={false}
-                    />
-                  </div>
-                  {l.caption ? <figcaption className="p-3 text-sm text-zinc-300">{l.caption}</figcaption> : null}
-                </figure>
-              ))} */}
-            </div>
+            {/* Aici ar veni logica de mapare a array-ului 'looks' dacă ar fi activ */}
           </section>
 
           {/* Materiale & Proces */}
           <section>
             <h2 className="font-[var(--font-arhaic)] text-2xl mb-4" style={{ color: "var(--color-theme-accent)" }}>
-              Materiale & proces
+              {sectionTitleMaterials}
             </h2>
             <div className="rounded-xl border border-white/15 bg-black/10 p-6 font-serif leading-relaxed text-zinc-100">
               <ul className="list-disc pl-5 space-y-2">
-                <li>Bumbac organic, in, amestecuri reciclate.</li>
-                <li>Imprimare pe bază de apă; serigrafie artizanală.</li>
-                <li>Tăieturi asimetrice, detalii raw-edge, reparații vizibile.</li>
-                <li>Serii mici, trasabilitate și iterații controlate.</li>
+                {materialsList.length > 0 ? (
+                    materialsList.map((item, i) => <li key={i}>{item}</li>)
+                ) : (
+                    <li>{fashionContent?.defaultMaterialItem ?? "No material information available."}</li>
+                )}
               </ul>
             </div>
           </section>
 
           <section className="text-center">
-            <p className="font-serif text-lg text-zinc-100">Cauți colaborare sau ediții speciale?</p>
+            <p className="font-serif text-lg text-zinc-100">{ctaText}</p>
             <Link href={`/${locale}/contact`} className="mt-4 inline-block px-6 py-3 rounded-lg border border-white/30 bg-black/30 hover:bg-black/50 text-white transition">
-              Scrie-ne →
+              {ctaLink}
             </Link>
           </section>
         </main>

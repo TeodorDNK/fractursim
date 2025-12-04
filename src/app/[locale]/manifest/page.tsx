@@ -65,8 +65,9 @@ export async function generateMetadata({ params }: ParamsP): Promise<Metadata> {
   return buildPageMetadata({
     locale,
     pathname: "/manifest",
-    title: t.meta?.manifest?.title ?? "Manifestul Fracturism",
-    description: t.meta?.manifest?.description ?? "Principiile, viziunea și limbajul Fracturismului.",
+    // Fallback: folosește cheia `manifest.title` din `meta` (care ar trebui să fie tradusă) sau un titlu generic.
+    title: t.meta?.manifest?.title ?? "Fracturist Manifesto", 
+    description: t.meta?.manifest?.description ?? "Principles, vision, and language of Fracturism.",
   });
 }
 
@@ -86,37 +87,33 @@ export default async function ManifestPage({ params }: { params: Promise<{ local
   const locale = isLocale(raw) ? (raw as Locale) : "ro";
   const t = await getMessages(locale);
 
-  // i18n content (cu fallbackuri elegante)
-  const title = t.manifest?.title ?? "Manifestul Fracturism";
-  const dek =
-    t.manifest?.subtitle ??
-    "Fractura ca resursă. Ordinea din crăpătură. Frumusețea imperfecțiunii.";
+  // --- I18N Content Extraction (Fără Fallback-uri RO) ---
+  const manifestContent = t.pages?.manifest;
 
-  const introP =
-    t.manifest?.intro ??
-    "Fracturismul propune o schimbare de perspectivă: în loc să ascundă fisurile, le face vizibile și fertile, transformând accidentul în metodă și imperfecțiunea în material expresiv.";
+  // Utilizează t.pages.manifest pentru toate valorile sau un fallback strict.
+  const title = manifestContent?.title ?? "Manifesto";
+  const dek = manifestContent?.epigraph ?? ""; // Folosim epigraf ca sub-titlu
+  
+  // Am presupus că introducerea și paragrafele vin de sub o structură 'sections'
+  const introP = manifestContent?.sections?.origin?.body ?? ""; 
 
-  const paragraphs: string[] =
-    t.manifest?.paragraphs ?? [
-      "Ruptura nu este un sfârșit, ci un început al formelor care se rearanjează. Din tensiunea dintre fragmente răsare o nouă coerență.",
-      "Materiile imperfecte, texturile dubioase și discontinuitățile formale devin un alfabet. Ele vorbesc despre memorie, timp și cicatrizare.",
-      "Fracturismul valorifică limitele ca granițe creative. Prin controlul hazardului, se construiesc compoziții ale autenticității.",
-    ];
+  // Paragrafele de bază
+  const paragraphs: string[] = manifestContent?.sections?.aesthetics?.body
+    ? [manifestContent.sections.aesthetics.body, manifestContent.sections.position.body] 
+    : []; // Setează la [] dacă nu există, pentru a nu afișa text hardcodat
 
-  const principles: string[] =
-    t.manifest?.principles ?? [
-      "Fractura e limbaj, nu defect.",
-      "Accidentul e metodă, nu obstacol.",
-      "Memoria materială contează.",
-      "Ordinea se naște din tensiune.",
-      "Imperfecțiunea are valoare estetică.",
-    ];
+  // Lista de principii
+  const principles: string[] = manifestContent?.sections?.principles?.items ?? []; 
 
-  const quoteText = t.manifest?.quote?.text ?? "„Fracturism – A New Language of Fragments.”";
-  const quoteAuthor = t.manifest?.quote?.author ?? "Teodor G. Dinică";
+  // Citat
+  const quoteText = manifestContent?.epigraph ?? "„A New Language of Fragments.”"; // Folosim epigraph ca citat principal, dacă e necesar
+  const quoteAuthor = manifestContent?.byline ?? "The Artist"; // Folosim byline ca autor
 
-  const ctaArtist = t.manifest?.ctaArtist ?? "Artistul";
-  const ctaGallery = t.manifest?.ctaGallery ?? "Vezi Galeria";
+  // CTA-uri (cu fallback la valorile generale din nav, dacă nu sunt specificate pe pagină)
+  const ctaArtist = t.nav?.artist ?? "The Artist";
+  const ctaGallery = t.nav?.gallery ?? "Gallery";
+  // --- END I18N Content Extraction ---
+
 
   // JSON-LD Article
   const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://fracturism.tld";
@@ -160,25 +157,32 @@ export default async function ManifestPage({ params }: { params: Promise<{ local
           {/* conținut manifest */}
           <section className="max-w-5xl mx-auto px-6 py-12 border-t border-b border-white/20">
             <div className="prose prose-invert prose-zinc max-w-none">
-              <p className="font-serif text-[17px] leading-relaxed">{introP}</p>
+              {/* Introducere (Origin) */}
+              {introP && <p className="font-serif text-[17px] leading-relaxed">{introP}</p>}
 
+              {/* Paragrafe secundare (Aesthetics & Position) */}
               {paragraphs.map((p, i) => (
                 <p key={i} className="font-serif text-[17px] leading-relaxed mt-4">
                   {p}
                 </p>
               ))}
 
-              <h2
-                className="font-[var(--font-arhaic)] text-2xl mt-8 mb-3"
-                style={{ color: "var(--color-theme-accent)" }}
-              >
-                {t.manifest?.principlesTitle ?? "Principii"}
-              </h2>
-              <ul className="list-disc pl-5 space-y-1 text-[17px]">
-                {principles.map((pr, i) => (
-                  <li key={i}>{pr}</li>
-                ))}
-              </ul>
+              {/* Principii */}
+              {principles.length > 0 && (
+                <>
+                  <h2
+                    className="font-[var(--font-arhaic)] text-2xl mt-8 mb-3"
+                    style={{ color: "var(--color-theme-accent)" }}
+                  >
+                    {manifestContent?.sections?.principles?.title ?? "Principles"}
+                  </h2>
+                  <ul className="list-disc pl-5 space-y-1 text-[17px]">
+                    {principles.map((pr, i) => (
+                      <li key={i}>{pr}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           </section>
 

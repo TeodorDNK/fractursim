@@ -1,5 +1,6 @@
 {
   "brand": "Fracturism",
+  
   "nav": {
     "home": "Acasă",
     "manifest": "Manifest",
@@ -10,16 +11,31 @@
     "contact": "Contact",
     "legal": "Legal"
   },
+  
+  "meta": {
+    "home": {
+      "title": "Fracturism – Arta rupturii",
+      "description": "Un curent fondat de Teodor G. Dinică. Frumusețea imperfecțiunii."
+    },
+    "manifest": {
+      "title": "Manifestul Fracturist",
+      "description": "Principii, estetică și poziționare."
+    },
+    "artist": {
+      "title": "Teodor G. Dinică – Artistul",
+      "description": "Autorul Fracturismului. Biografie, viziune și lucrări."
+    },
+    "fashion": {
+      "title": "Modă & Design – Fracturism",
+      "description": "Colecții capsulă, obiecte și textile influențate de limbajul Fracturist."
+    },
     "contact": {
-    "title": "Scrie-ne un mesaj",
-    "description": "Lasă-ne adresa ta de e-mail și mesajul. Răspundem în cel mai scurt timp.",
-    "emailLabel": "E-mail",
-    "messageLabel": "Mesaj",
-    "submit": "Trimite",
-    "success": "Mesaj trimis. Mulțumim!",
-    "error": "Eroare la trimitere. Încearcă din nou."
+      "title": "Contact – Fracturism",
+      "description": "Contactează echipa Fracturism pentru colaborări, expoziții și dialog artistic."
+    }
   },
-   "home": {
+  
+  "home": {
     "badge": "Fracturism",
     "h1": "Frumusețea imperfecțiunii.",
     "subtitle": "Un curent fondat de Teodor G. Dinică. O lume spartă în sensuri noi.",
@@ -29,65 +45,41 @@
         "title": "Manifest",
         "description": "Originea curentului, principiile de bază și poziționarea față de alte mișcări.",
         "image": "/images/manifest.jpg",
-        "items": [
-          "Originea ideii",
-          "Principii cardinale",
-          "Estetica fragmentului"
-        ]
+        "items": ["Originea ideii", "Principii cardinale", "Estetica fragmentului"]
       },
       "gallery": {
         "title": "Galerie",
         "description": "Selecție de lucrări, seriile reprezentative și studii vizuale.",
         "image": "/images/gallery.jpg",
-        "items": [
-          "Serii tematice",
-          "Detalii și macro",
-          "Lucrări în lucru"
-        ]
+        "items": ["Serii tematice", "Detalii și macro", "Lucrări în lucru"]
       },
       "fashion": {
         "title": "Modă & Design",
         "description": "Aplicarea fracturismului în textile, tipare, obiecte și spații.",
         "image": "/images/fashion.jpg",
-        "items": [
-          "Texturi & pattern-uri",
-          "Capsule & colaborări",
-          "Obiecte funcționale"
-        ]
+        "items": ["Texturi & pattern-uri", "Capsule & colaborări", "Obiecte funcționale"]
       },
       "artist": {
         "title": "Artistul",
         "description": "Teodor G. Dinică – parcurs, intenții și atelier.",
         "image": "/images/artist.jpg",
-        "items": [
-          "Bio & interviuri",
-          "Proces & materiale",
-          "Declarație artistică"
-        ]
+        "items": ["Bio & interviuri", "Proces & materiale", "Declarație artistică"]
       },
       "news": {
         "title": "Noutăți",
         "description": "Anunțuri, expoziții și apariții în presă.",
         "image": "/images/news.jpg",
-        "items": [
-          "Expoziții & vernisaje",
-          "Articole & recenzii",
-          "Calendar evenimente"
-        ]
+        "items": ["Expoziții & vernisaje", "Articole & recenzii", "Calendar evenimente"]
       },
       "contact": {
         "title": "Contact",
         "description": "Comenzi, colaborări, expoziții. Spune-ne ce ai în minte.",
         "image": "/images/contact.jpg",
-        "items": [
-          "Comenzi personalizate",
-          "Colaborări",
-          "Invitații la evenimente"
-        ]
+        "items": ["Comenzi personalizate", "Colaborări", "Invitații la evenimente"]
       }
     }
   },
-  "footer": { "rights": "Fracturism® Toate drepturile rezervate." },
+  
   "pages": {
     "manifest": {
       "title": "Manifestul Fracturist",
@@ -106,17 +98,319 @@
         "aesthetics": { "title": "Estetica fragmentului", "body": "Text de introdus..." },
         "position": { "title": "Poziționare vs. alte curente", "body": "Text de introdus..." }
       }
+    },
+    "privacy": {
+      "metaTitle": "Politica de Confidențialitate – Fracturism",
+      "metaDescription": "Detalii despre colectarea, utilizarea și protecția datelor personale (GDPR) de către Fracturism.",
+      "title": "Politica de Confidențialitate",
+      "updatedPrefix": "Ultima actualizare:",
+      "date": "04 Decembrie 2025",
+      "intro": "Protecția datelor dumneavoastră personale este esențială. Această politică explică modul în care Fracturism colectează, utilizează și protejează informațiile în conformitate cu Regulamentul General privind Protecția Datelor (GDPR).",
+      "sections": [
+        {
+          "title": "Date Colectate",
+          "body": "Colectăm minimul necesar de date pentru a oferi servicii și a îmbunătăți experiența de navigare.",
+          "subsections": [
+            {
+              "title": "Date Furnizate Direct",
+              "body": [
+                "**Contact:** Nume și adresa de e-mail (atunci când folosiți formularul de contact).",
+                "**Comenzi:** Adresă de livrare și detalii de facturare (dacă se fac achiziții viitoare)."
+              ]
+            },
+            {
+              "title": "Date Colectate Automat (Trafic)",
+              "body": [
+                "**Informații de navigare:** Adresa IP, tipul de browser, paginile vizitate, ora și data accesării.",
+                "**Cookie-uri:** Utilizăm cookie-uri esențiale pentru funcționalitatea site-ului și, cu acordul dumneavoastră, cookie-uri de analiză pentru a înțelege fragmentele de interacțiune."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Scopul Utilizării Datelor",
+          "body": [
+            "Pentru a răspunde solicitărilor dumneavoastră trimise prin formularul de contact.",
+            "Pentru a finaliza și livra comenzile (dacă este cazul).",
+            "Pentru a analiza performanța site-ului și a îmbunătăți experiența digitală (prin date anonimizate/pseudonimizate).",
+            "Pentru a respecta obligațiile legale și a proteja drepturile noastre (inclusiv DPI-ul Fracturism®)."
+          ]
+        },
+        {
+          "title": "Partajarea Datelor",
+          "body": "Nu vindem și nu închiriem datele dumneavoastră personale. Acestea pot fi partajate doar cu terți esențiali pentru funcționare:",
+          "subsections": [
+            {
+              "title": "Procesatori de Servicii",
+              "body": "Companii care oferă servicii de găzduire, analiză web (ex: Google Analytics) sau procesare plăți. Acești terți sunt obligați contractual să protejeze datele."
+            },
+            {
+              "title": "Cerințe Legale",
+              "body": "Dacă acest lucru este cerut de lege sau necesar pentru a proteja drepturile și securitatea Fracturism® și a utilizatorilor săi."
+            }
+          ]
+        },
+        {
+          "title": "Drepturile Dumneavoastră (GDPR)",
+          "body": "În calitate de utilizator, aveți următoarele drepturi:",
+          "subsections": [
+            {
+              "title": "Dreptul de Acces",
+              "body": "Să solicitați o copie a datelor personale pe care le deținem despre dumneavoastră."
+            },
+            {
+              "title": "Dreptul la Rectificare",
+              "body": "Să cereți corectarea oricăror date incomplete sau inexacte."
+            },
+            {
+              "title": "Dreptul la Ștergere (Dreptul de a fi uitat)",
+              "body": "Să solicitați ștergerea datelor dumneavoastră, în condițiile prevăzute de lege."
+            },
+            {
+              "title": "Dreptul la Opoziție",
+              "body": "Să vă opuneți prelucrării datelor dumneavoastră în anumite scopuri (ex: marketing direct)."
+            }
+          ]
+        },
+        {
+          "title": "Contact",
+          "body": "Pentru întrebări legate de această Politică de Confidențialitate sau pentru exercitarea drepturilor dumneavoastră, vă rugăm să ne contactați la adresa de email menționată în secțiunea 'Contact' a site-ului."
+        }
+      ]
+    },
+    "legal": {
+    "updatedPrefixFallback": "Ultima actualizare:",
+    "error": {
+      "loadTitle": "Eroare de Încărcare",
+      "cookiesNotFound": "Politica de Cookie-uri nu a putut fi încărcată.",
+      "privacyNotFound": "Politica de Confidențialitate nu a putut fi încărcată.",
+      "termsNotFound": "Termenii și condițiile nu au putut fi încărcți."
+    },
+    "links": {
+      "terms": "Termeni și Condiții",
+      "privacy": "Politica de Confidențialitate"
+    },
+    "cookies": {
+      "fallbackMetaTitle": "Politica de Cookie-uri – Fracturism",
+      "fallbackMetaDescription": "Detalii despre utilizarea cookie-urilor pe site-ul Fracturism, inclusiv Google Analytics 4.",
+      "footerText": "Colectarea datelor se face doar pentru a înțelege mai bine fragmentele de interacțiune."
     }
   },
-
-  "meta": {
-    "home": {
-      "title": "Fracturism – Arta rupturii",
-      "description": "Un curent fondat de Teodor G. Dinică. Frumusețea imperfecțiunii."
-    },
-    "manifest": {
-      "title": "Manifestul Fracturist",
-      "description": "Principii, estetică și poziționare."
+    "terms": {
+      "metaTitle": "Termene și Condiții – Fracturism",
+      "metaDescription": "Regulile de utilizare, drepturile de autor și licențierea conținutului artistic Fracturism.",
+      "title": "Termene și Condiții de Utilizare",
+      "updatedPrefix": "Ultima actualizare:",
+      "date": "04 Decembrie 2025",
+      "intro": "Prin accesarea și utilizarea acestui site și a oricărui conținut asociat (inclusiv imagini, texte, obiecte digitale), sunteți de acord cu următorii Termeni și Condiții. Fracturism® reprezintă o entitate artistică fondată de Teodor G. Dinică.",
+      "sections": [
+        {
+          "title": "Acceptarea Termenilor",
+          "body": "Utilizarea continuă a acestui spațiu digital constituie acceptul dumneavoastră ferm al Termenilor. Dacă nu sunteți de acord cu Termenii, vă rugăm să încetați imediat utilizarea."
+        },
+        {
+          "title": "Drepturile de Proprietate Intelectuală (DPI)",
+          "body": "Toate operele de artă, conceptele, textele, elementele de design, codul sursă și estetica rupturii (denumită Fracturism) prezentate pe acest site sunt proprietatea exclusivă a Fracturism® și a fondatorului său, Teodor G. Dinică, și sunt protejate de legile naționale și internaționale privind dreptul de autor.",
+          "subsections": [
+            {
+              "title": "Utilizarea Conținutului",
+              "body": [
+                "**Vizualizarea:** Aveți dreptul de a vizualiza conținutul pentru uz personal, necomercial, în scop de informare și apreciere artistică.",
+                "**Replicarea Fragmentului:** Reproducerea, distribuția sau modificarea oricărui fragment sau a întregii opere fără acordul scris prealabil din partea Fracturism® este strict interzisă."
+              ]
+            },
+            {
+              "title": "Licențierea Operei",
+              "body": "Orice utilizare comercială a conceptelor, imaginilor sau elementelor de design Fracturiste necesită un acord de licențiere distinct. Contactați echipa pentru detalii privind colaborările și drepturile de utilizare."
+            }
+          ]
+        },
+        {
+          "title": "Limitarea Răspunderii",
+          "body": "Deși depunem eforturi rezonabile pentru a ne asigura că informațiile de pe acest site sunt actuale și exacte, Fracturism® nu își asumă răspunderea pentru erori, omisiuni sau pentru eventualele daune directe sau indirecte care rezultă din utilizarea sau incapacitatea de a utiliza conținutul."
+        },
+        {
+          "title": "Link-uri Externe și Referințe",
+          "body": "Acest site poate conține link-uri către site-uri terțe. Aceste link-uri sunt furnizate exclusiv pentru confortul dumneavoastră. Fracturism® nu își asumă responsabilitatea pentru conținutul sau politicile de confidențialitate ale site-urilor externe."
+        },
+        {
+          "title": "Terminarea Accesului",
+          "body": "Fracturism® își rezervă dreptul de a suspenda sau de a înceta accesul dumneavoastră la site, fără notificare prealabilă, în cazul în care constată o încălcare a acestor Termeni și Condiții, în special în ceea ce privește drepturile de DPI și utilizarea neautorizată a fragmentelor artistice."
+        }
+      ]
     }
+  },
+  
+  "artist": {
+    "title": "Teodor G. Dinică",
+    "subtitle": "Fracturism – Dincolo de Perfecțiune, În Fisuri",
+    "bio": {
+      "p1": "Teodor G. Dinică este artistul și fondatorul curentului Fracturism – o explorare a frumuseții din ruptură, a ordinii care se naște din fisuri.",
+      "p2": "Născut în Păunești, Vrancea, crescut între materie brută și poezie vizuală, își orientează practica către compoziții fragmentare, texturi stratificate și tensiuni controlate.",
+      "p3": "În lucrările sale, „defectul” devine limbaj, iar accidentul – metodă. Fractura e tratată ca resursă, nu ca piedică."
+    },
+    "themesTitle": "Teme & Preocupări",
+    "themes": [
+      "Frumusețea imperfecțiunii",
+      "Texturi fracturate și compoziții stratificate",
+      "Ordinea care răsare din haos"
+    ],
+    "timelineTitle": "Repere",
+    "timeline": [
+      {
+        "year": "2018–2020",
+        "text": "Explorări în compoziții fragmentare și mixed-media."
+      },
+      {
+        "year": "2021–2023",
+        "text": "Consolidarea limbajului vizual Fracturist."
+      },
+      {
+        "year": "2024–prezent",
+        "text": "Serii tematice: ruptură, cicatrizare, memorie materială."
+      }
+    ],
+    "quote": {
+      "text": "„Fracturism – Un Nou Limbaj al Fragmentelor.”",
+      "author": "Teodor G. Dinică"
+    },
+    "ctaManifest": "Manifestul Fracturism",
+    "ctaGallery": "Vezi Galeria"
+  },
+  
+  "fashion": {
+    "title": "Modă & Design",
+    "subtitle": "Forme fracturate, ritm ornamental și materiale naturale — aplicate pe modă, obiect și spațiu.",
+    "sectionTitleCollections": "Colecții",
+    "sectionTitleMaterials": "Materiale & Proces",
+    "sectionTitleLookbook": "Lookbook",
+    "linkTextCollection": "Vezi colecția →",
+    "defaultSeasonTag": "Capsulă",
+    "materialsList": [
+      "Bumbac organic, in, amestecuri reciclate.",
+      "Imprimare pe bază de apă; serigrafie artizanală.",
+      "Tăieturi asimetrice, detalii raw-edge, reparații vizibile.",
+      "Serii mici, trasabilitate și iterații controlate."
+    ],
+    "ctaText": "Cauți colaborare sau ediții speciale?",
+    "ctaLink": "Scrie-ne →",
+    "defaultMaterialItem": "Informații despre materiale nu sunt disponibile.",
+    "collections": [
+      {
+        "slug": "capsula-ritm-fracturat",
+        "title": "Capsula • Ritm fracturat",
+        "blurb": "Silhuete curate, tăieturi asimetrice și imprimeuri care păstrează amprenta fisurii.",
+        "cover": "/images/1.jpg",
+        "season": "AW 2025"
+      },
+      {
+        "slug": "texturi-ceramica-textil",
+        "title": "Texturi • Ceramică & Textil",
+        "blurb": "Dialog între porozitatea ceramicii și moliciunea fibrelor. Suprafețe care respiră.",
+        "cover": "/images/2.jpg",
+        "season": "SS 2025"
+      },
+      {
+        "slug": "obiecte-pentru-interior",
+        "title": "Obiecte pentru interior",
+        "blurb": "Corpuri mici de lumină, tăvi, suporturi, toate compuse din motive recurente.",
+        "cover": "/images/3.jpg"
+      }
+    ]
+  },
+  
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Lucrări selectate și poveștile lor.",
+    "items": {
+      "portret-si-materie": {
+        "title": "Portret și Materie",
+        "caption": "Chipul din apropiere devine textură. Fractura nu ascunde, dezvăluie – o poartă spre sens.",
+        "longDescription": "Detaliu: Această lucrare explorează tensiunea dintre forma clasică a portretului și destrămarea materiei. Când privim de aproape, liniile devin fisuri, dezvăluind fragilitatea și complexitatea interioare. Este un dialog între realitatea văzută și cea simțită. Dimensiunea: 100x70 cm, Tehnică: Acrilic pe pânză, An: 2023.",
+        "seoTitle": "Portret și Materie - Arta Fracturistă | Fracturism",
+        "seoDescription": "Descoperă Portret și Materie: o lucrare ce explorează fragilitatea și destrămarea. Detalii despre dimensiune, tehnică și povestea din spatele creației Fracturiste."
+      },
+      "moneda-fracturista": {
+        "title": "Eternul în eroare",
+        "caption": "Chipul sculptural, prins între stabilitate și distorsiune digitală, devine metafora unei conștiințe care caută sensul într-o lume în permanentă dezintegrare",
+        "longDescription": "În „Eternul în eroare”, forma canonică a frumosului clasic este supusă unei dezmembrări controlate. Sculptura, odinioară simbol al ordinii, rațiunii și armoniei, este traversată de fluxuri de ruptură vizuală, erori cromatice și interferențe digitale. Astfel, imaginea devine câmp de tensiune între două lumi: una a stabilității mitice și alta a instabilității contemporane.\n\nFragmentarea nu distruge, ci revelează. Eroarea nu este doar defect tehnic, ci principiu existențial. Chipul nu se destramă gratuit, ci este „re-scris” de haosul timpului prezent. În această fisură dintre ceea ce a fost considerat etern și ceea ce este inevitabil instabil se naște sensul fracturist al lucrării.\n\nCuloarea — între turcoazul rece, rozul electric și griul mineral — funcționează ca o pulsație între viață, memorie și artificial. Fundalul natural și arhitectural evocă o lume încă recognoscibilă, dar deja contaminată de distorsiune, sugerând că niciun spațiu nu mai rămâne intact în fața erorii.\n\n„Eternul în eroare” nu este o simplă reprezentare a degradării, ci o meditație asupra identității în era fragmentării. Este portretul unei umanități care, deși se sprijină pe formele trecutului, este condamnată să se reconfigureze continuu prin fisură, prin defect, prin instabilitate.",
+        "seoTitle": "Fracturism - Eternul în eroare",
+        "seoDescription": "Fracturism - În „Eternul în eroare”, forma canonică a frumosului clasic este supusă unei dezmembrări controlate."
+      },
+      "ornament-ordine-ruptura": {
+        "title": "Realitatea este mediată, filtrată, fragmentată",
+        "caption": "Un trup imobil într-un spațiu clinic privește, printr-un artificiu tehnologic, spre o lume care nu îi mai aparține. Realitatea este mediată, filtrată, fragmentată. Libertatea există doar ca simulare. Conștiința rămâne captivă între pereți reci și promisiuni digitale.",
+        "longDescription": "Lucrarea reprezintă o stare de suspendare între viață și proiecție, între corp și evadare, între prezentul dur și iluzia reconfortantă. Personajul, imobilizat într-un pat de spital, este conectat nu la realitate, ci la o reconstrucție idealizată a ei: o insulă, o mare calmă, un cer fără boală. Însă această libertate este doar o interfață.\n\nOchelarii VR devin simbolul fracturist al evadării artificiale — o ruptură între ceea ce este trăit și ceea ce este permis să fie imaginat. Camera rece, medicală, este posedată de un albastru aproape uniform, semn al stagnării, al timpului care nu mai curge natural, ci este măsurat de aparate. Ceasul din fundal nu mai indică viața, ci monitorizarea ei.\n\nFericirea este proiectată pe perete ca un peisaj fără corp, fără durere, fără greutate. Palmierul și marea nu sunt reale — sunt doar codificări ale dorinței umane de evadare din suferință. Astfel, lucrarea nu vorbește despre speranță, ci despre dependența de simulacru.\n\nFractura nu este violentă vizual, ci tăcută: între trupul vulnerabil și universul perfect, între limitele biologice și promisiunea infinitului digital. Omul nu mai visează — el este conectat la propria lui iluzie.\n\nAceasta este o meditație asupra viitorului în care suferința nu este vindecată, ci estompată prin imagine. O lume în care durerea nu mai dispare, ci este doar acoperită cu lumină artificială.",
+        "seoTitle": "Fracturism - Realitatea este mediată, filtrată, fragmentată",
+        "seoDescription": "Fracturism - Ochelarii VR devin simbolul fracturist al evadării artificiale."
+      },
+      "separator": {
+        "title": "„Geneza Fracturată”",
+        "caption": "„Geneza Fracturată” este o lucrare picturală în stil fracturist care combină forme clasice cu rupturi, distorsiuni și elemente inspirate din estetica digitală.",
+        "longDescription": "„Geneza Fracturată” este o lucrare picturală realizată în spiritul Fracturismului, în care formele clasice se contopesc cu rupturi deliberate, distorsiuni cromatice și fragmente vizuale inspirate de estetica digitală. În centrul compoziției, figura umană devine un simbol al identității despicate, aflată într-un proces continuu de destrămare și reconstrucție.\nTonurile pământii, calde, sunt străpunse de accente neonice, create pentru a amplifica tensiunea dintre organic și artificial, dintre trecutul pictural și prezentul tehnologic. Suprafețele pictate alternează între detalii aproape renascentiste și zone „fracturate”: glitcheuri picturale, linii fragmentate, straturi suprapuse și geometrii rupte ce dezvăluie fragilitatea percepției contemporane.\nElemente subtile – oglinzi sparte, umbre ale memoriei, urme de cod și simboluri estompate – funcționează ca repere ale temelor centrale ale Fracturismului: eroziunea identității, suprascrierea realității și estetica imperfecțiunii.\nLucrarea nu caută să vindece ruptura, ci să o facă vizibilă. „Geneza Fracturată” este o mărturie vizuală a individului modern: frânt, suprasaturat, dar profund autentic în propria dezordine.",
+        "seoTitle": "Fracturism - Geneza Fracturată",
+        "seoDescription": "Fracturism - lucrare picturală realizată în spiritul Fracturismului"
+      },
+      "mona": {
+        "title": "„Ecouri din Identitatea Risipită”",
+        "caption": "„Ecouri din Identitatea Risipită” explorează fracturarea identității feminine printr-o compoziție hibridă, aflată la intersecția dintre pictura tradițională și estetica digitală. Imaginea pornește de la un portret realist peste care se suprapun straturi fragmentate, glitch-uri deliberate și distorsiuni cromatice.",
+        "longDescription": "„Ecouri din Identitatea Risipită” este o lucrare în care chipul femeii se destramă asemenea unui vis reflectat într-o oglindă fisurată. Fragmentele ei plutesc între două lumi: una caldă și pământie, ca o amintire, și alta rece, electrică, asemenea unui semnal pierdut în vastitatea digitalului.\n\nNuanțele de sienna și ocru încearcă să păstreze conturul familiar, în timp ce magenta și cyan pulsează ca o intruziune, ca un avertisment, ca un adevăr imposibil de ignorat.\n\nPortretul respiră într-un ritm frânt. O parte rămâne umană și tandră, cealaltă se rupe, se pixelizează și se evaporă în glitch — exact acolo unde identitatea devine ecou, iar ecoul rămâne singura dovadă a unei întregiri de mult pierdute.",
+        "seoTitle": "Fracturism – Ecouri din Identitatea Risipită",
+        "seoDescription": "Lucrare fracturistă ce explorează destrămarea identității feminine prin elemente picturale, glitch-uri digitale și contrast cromatic între trecutul organic și estetica modernă."
+      },
+      "lisa": {
+        "title": "„Anatomia unei Identități Noi”",
+        "caption": "„Anatomia unei Identități Noi” aparține direcției artistice Fracturism și investighează procesul contemporan de fragmentare și reconstrucție a identității vizuale. Lucrarea este alcătuită din patru segmente verticale distincte, fiecare realizat într-un registru stilistic diferit: realism clasic, glitch digital, abstracție geometrică și distorsiune expresionistă.",
+        "longDescription": "„Anatomia unei Identități Noi” explorează felul în care identitatea contemporană se formează, se rupe și se reasamblează la granița dintre trecut și era digitală. Portretul este împărțit în patru secțiuni verticale, fiecare pictată într-un stil autonom — realism clasic, glitch digital, abstracție geometrică și distorsiune expresionistă.\n\nFiecare fragment pare desprins dintr-o lume vizuală diferită, însă împreună reconstruiesc o figură coerentă, prinsă într-o tranziție continuă. Interferențele cromatice — de la tonuri calde și naturale în zona realistă până la cian electric, magenta saturată și galben neon în segmentele digitale — evidențiază tensiunea dintre identitatea originară și cea reconfigurată.\n\nTexturile picturale tradiționale, juxtapuse cu erori digitale, pixeli fracturați și geometrii rupte, creează o armonie instabilă care sugerează fragilitatea sinelui în epoca suprasaturării informaționale. Lucrarea funcționează ca o „radiografie digitală a sinelui”, o disecție vizuală a procesului prin care devenim identități multiple suprapuse între realitate, tehnologie și memorie.",
+        "seoTitle": "Fracturism – Anatomia unei Identități Noi",
+        "seoDescription": "Lucrare fracturistă ce examinază fragmentarea și reconstrucția identității vizuale prin realism clasic, glitch digital, abstracție geometrică și distorsiune expresionistă."
+      },
+      "robo": {
+        "title": "„Cifra care Visează să Fie Om”",
+        "caption": "„Cifra care Visează să Fie Om” prezintă o figură umanoidă digitalizată aflată la granița dintre artificial și uman, încercând să-și depășească natura algoritmică. Formele glitch-uite și fragmentele de cod se împletesc cu tentative de organicitate, iar cromatica rece, traversată de accente neon, subliniază această transformare. Privirea meditativă sugerează dorința de identitate, transformând lucrarea într-o metaforă a epocii în care și oamenii sunt reconstruiți continuu din date, imagini și memorie fragmentată.",
+        "longDescription": "„Cifra care Visează să Fie Om” explorează tensiunea fundamentală dintre artificial și uman, dintre cod și conștiință. Figura umanoidă, alcătuită din fragmente digitale, pixeli dispersați, pattern-uri aleatorii și linii de cod binar, pare să se desprindă treptat de propria natură matematică pentru a căuta un început de identitate organică.\n\nCompoziția folosește o paletă dominată de albastru profund, auriu stins și accente neon, sugerând transferul dintre două lumi. Partea superioară a portretului, instabilă și fragmentată de glitch-uri, pare să fie în plin proces de rescriere; partea inferioară încearcă să capete volum, textură, o „carne” simulată. Această dualitate vizuală dezvăluie efortul unui construct digital de a deveni ceva mai mult decât algoritmi în buclă.\n\nPrivirea laterală, calmă și meditativă, transmite o dorință de auto-depășire: o cifră care aspiră să fie om. Fiecare strat pictural, digital și fracturat, reprezintă o etapă în căutarea sincronizării între mecanic și organic, între virtual și real, între identitate și proiecție.\n\nLucrarea devine o metaforă pentru lumea contemporană — un timp în care și noi, oamenii, suntem reconstruiți permanent din informații, date, imagini și fragmente ale propriei memorii.",
+        "seoTitle": "Fracturism – Cifra care Visează să Fie Om",
+        "seoDescription": "Lucrare fracturistă ce explorează tensiunea dintre artificial și uman, dintre cod, conștiință și identitatea reconstruită în era digitală."
+      }
+    }
+  },
+  
+  "galleryItem": {
+    "notFound": "Lucrarea nu a fost găsită.",
+    "sectionTitle": "Detalii complete despre lucrare",
+    "defaultSeoDescription": "Detaliu lucrare Fracturism."
+  },
+
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Pentru colaborări, expoziții sau interviuri, ne poți scrie direct.",
+    "formTitle": "Trimite-ne un mesaj",
+    "form": {
+      "namePlaceholder": "Nume",
+      "emailPlaceholder": "Email",
+      "messagePlaceholder": "Mesaj",
+      "submit": "Trimite"
+    },
+    "social": {
+      "email": "Email",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
+  },
+  
+  "contactForm": {
+    "title": "Scrie-ne un mesaj",
+    "description": "Lasă-ne adresa ta de e-mail și mesajul. Răspundem în cel mai scurt timp.",
+    "emailLabel": "E-mail",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Spune-ne cum te putem ajuta…",
+    "submit": "Trimite",
+    "sending": "Se trimite…",
+    "success": "Mesaj trimis. Mulțumim!",
+    "error": "Eroare la trimitere. Te rugăm să încerci din nou."
+  },
+  
+  "footer": {
+    "rights": "Fracturism® Toate drepturile rezervate."
   }
 }

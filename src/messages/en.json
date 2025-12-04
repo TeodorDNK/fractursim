@@ -10,87 +10,280 @@
     "contact": "Contact",
     "legal": "Legal"
   },
-    "contact": {
-    "title": "Send us a message",
-    "description": "Leave your e-mail and message. We’ll get back to you shortly.",
-    "emailLabel": "Email",
-    "messageLabel": "Message",
-    "submit": "Send",
-    "success": "Message sent. Thank you!",
-    "error": "Failed to send. Please try again."
+  "meta": {
+    "fashion": {
+      "title": "Fashion & Design – Fracturism",
+      "description": "Capsule collections, objects, and textiles influenced by the Fracturist language."
+    }
   },
-  "footer": { "rights": "Fracturism® All rights reserved." },
-
-"home": {
+  "fashion": {
+    "title": "Fashion & Design",
+    "subtitle": "Fractured forms, ornamental rhythm, and natural materials — applied to fashion, objects, and space.",
+    "sectionTitleCollections": "Collections",
+    "sectionTitleMaterials": "Materials & Process",
+    "sectionTitleLookbook": "Lookbook",
+    "linkTextCollection": "View collection →",
+    "defaultSeasonTag": "Capsule",
+    "materialsList": [
+      "Organic cotton, linen, recycled blends.",
+      "Water-based printing; artisanal screen printing.",
+      "Asymmetric cuts, raw-edge details, visible mending.",
+      "Small series, traceability, and controlled iterations."
+    ],
+    "ctaText": "Looking for collaboration or special editions?",
+    "ctaLink": "Write to us →",
+    "defaultMaterialItem": "No material information available.",
+    "collections": [
+      {
+        "slug": "capsula-ritm-fracturat",
+        "title": "Capsule • Fractured Rhythm",
+        "blurb": "Clean silhouettes, asymmetric cuts, and prints that retain the imprint of the fissure.",
+        "cover": "/images/1.jpg",
+        "season": "AW 2025"
+      },
+      {
+        "slug": "texturi-ceramica-textil",
+        "title": "Textures • Ceramics & Textile",
+        "blurb": "Dialogue between the porosity of ceramics and the softness of fibers. Surfaces that breathe.",
+        "cover": "/images/2.jpg",
+        "season": "SS 2025"
+      },
+      {
+        "slug": "obiecte-pentru-interior",
+        "title": "Objects for Interior",
+        "blurb": "Small light fixtures, trays, holders, all composed of recurring motifs.",
+        "cover": "/images/3.jpg"
+      }
+    ]
+  },
+  "meta": {
+    "home": {
+      "title": "Fracturism – The Art of Rupture",
+      "description": "A movement founded by Teodor G. Dinică. The beauty of imperfection."
+    },
+    "manifest": {
+      "title": "The Fracturist Manifesto",
+      "description": "Principles, aesthetics, and positioning."
+    },
+    "artist": {
+      "title": "Teodor G. Dinică – The Artist",
+      "description": "The author of Fracturism. Biography, vision, and works."
+    },
+    "contact": {
+      "title": "Contact – Fracturism",
+      "description": "Contact the Fracturism team for collaborations, exhibitions, and artistic dialogue."
+    }
+  },
+  "artist": {
+    "title": "Teodor G. Dinică",
+    "subtitle": "Fracturism – Beyond Perfection, Within the Cracks",
+    "bio": {
+      "p1": "Teodor G. Dinică is the artist and founder of the Fracturism movement – an exploration of beauty in rupture, and the order born from fissures.",
+      "p2": "Born in Păunești, Vrancea, raised between raw material and visual poetry, he directs his practice toward fragmented compositions, layered textures, and controlled tension.",
+      "p3": "In his works, the 'defect' becomes language, and the accident – method. The fracture is treated as a resource, not an obstacle."
+    },
+    "themesTitle": "Themes & Concerns",
+    "themes": [
+      "The beauty of imperfection",
+      "Fractured textures and layered compositions",
+      "Order emerging from chaos"
+    ],
+    "timelineTitle": "Milestones",
+    "timeline": [
+      {
+        "year": "2018–2020",
+        "text": "Explorations in fragmented compositions and mixed media."
+      },
+      {
+        "year": "2021–2023",
+        "text": "Consolidation of the Fracturist visual language."
+      },
+      {
+        "year": "2024–present",
+        "text": "Thematic series: rupture, scarring, material memory."
+      }
+    ],
+    "quote": {
+      "text": "„Fracturism – A New Language of Fragments.”",
+      "author": "Teodor G. Dinică"
+    },
+    "ctaManifest": "The Fracturism Manifesto",
+    "ctaGallery": "View Gallery"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "For collaborations, exhibitions, or interviews, you can write to us directly.",
+    "formTitle": "Send us a message",
+    "form": {
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "messagePlaceholder": "Message",
+      "submit": "Send"
+    },
+    "social": {
+      "email": "Email",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
+  },
+  "galleryItem": {
+    "notFound": "Artwork not found.",
+    "sectionTitle": "Complete details about the artwork",
+    "defaultSeoDescription": "Fracturism artwork detail."
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Selected works and their stories.",
+    "items": {
+      "portret-si-materie": {
+        "title": "Portrait and Matter",
+        "caption": "The face, seen closely, becomes texture. The fracture doesn't hide, it reveals – a gateway to meaning.",
+        "longDescription": "Detail: This work explores the tension between the classic portrait form and the disintegration of matter. When viewed closely, lines become fissures, revealing inner fragility and complexity. It is a dialogue between perceived and felt reality. Dimension: 100x70 cm, Technique: Acrylic on canvas, Year: 2023.",
+        "seoTitle": "Portrait and Matter - Fracturist Art | Fracturism",
+        "seoDescription": "Discover Portrait and Matter: an artwork exploring fragility and disintegration. Details about dimension, technique, and the story behind the Fracturist creation."
+      },
+      "moneda-fracturista": {
+        "title": "The Eternal in Error",
+        "caption": "The sculptural face, caught between stability and digital distortion, becomes the metaphor for a consciousness seeking meaning in a world of continuous disintegration.",
+        "longDescription": "In 'The Eternal in Error,' the canonical form of classical beauty is subjected to controlled disassembly. The sculpture, once a symbol of order, reason, and harmony, is traversed by flows of visual rupture, chromatic errors, and digital interference. Thus, the image becomes a field of tension between two worlds: one of mythical stability and another of contemporary instability.\n\nFragmentation does not destroy, it reveals. Error is not just a technical flaw, but an existential principle. The face does not disintegrate gratuitously, but is 'rewritten' by the chaos of the present time. In this fissure between what was considered eternal and what is inevitably unstable, the fracturist meaning of the work is born.\n\nColor — between cold turquoise, electric pink, and mineral grey — functions as a pulsation between life, memory, and the artificial. The natural and architectural background evokes a world still recognizable, but already contaminated by distortion, suggesting that no space remains intact in the face of error.\n\n'The Eternal in Error' is not a mere representation of degradation, but a meditation on identity in the age of fragmentation. It is the portrait of a humanity that, while leaning on the forms of the past, is condemned to continually reconfigure itself through fissure, through defect, through instability.",
+        "seoTitle": "Fracturism - The Eternal in Error",
+        "seoDescription": "Fracturism - In 'The Eternal in Error,' the canonical form of classical beauty is subjected to controlled disassembly."
+      },
+      "ornament-ordine-ruptura": {
+        "title": "Reality is mediated, filtered, fragmented",
+        "caption": "An immobilized body in a clinical space gazes, through technological artifice, towards a world that no longer belongs to it. Reality is mediated, filtered, fragmented. Freedom exists only as simulation. Consciousness remains captive between cold walls and digital promises.",
+        "longDescription": "The work represents a state of suspension between life and projection, between body and escape, between harsh present and comforting illusion. The character, immobilized in a hospital bed, is connected not to reality, but to an idealized reconstruction of it: an island, a calm sea, a sky without illness. But this freedom is merely an interface.\n\nVR goggles become the fracturist symbol of artificial escape — a rupture between what is lived and what is allowed to be imagined. The cold, medical room is possessed by an almost uniform blue, a sign of stagnation, of time that no longer flows naturally, but is measured by machines. The clock in the background no longer indicates life, but its monitoring.\n\nHappiness is projected onto the wall as a landscape without a body, without pain, without weight. The palm tree and the sea are not real — they are merely codifications of the human desire to escape suffering. Thus, the work does not speak of hope, but of dependence on simulacrum.\n\nThe fracture is not visually violent, but silent: between the vulnerable body and the perfect universe, between biological limits and the promise of the digital infinite. Man no longer dreams — he is connected to his own illusion.\n\nThis is a meditation on a future where suffering is not healed, but blurred by image. A world where pain no longer disappears, but is merely covered with artificial light.",
+        "seoTitle": "Fracturism - Reality is mediated, filtered, fragmented",
+        "seoDescription": "Fracturism - VR goggles become the fracturist symbol of artificial escape."
+      },
+      "separator": {
+        "title": "„Fractured Genesis”",
+        "caption": "„Fractured Genesis” is a painterly work in the fracturist style that combines classical forms with ruptures, distortions, and elements inspired by digital aesthetics.",
+        "longDescription": "„Fractured Genesis” is a painterly work realized in the spirit of Fracturism, in which classical forms merge with deliberate ruptures, chromatic distortions, and visual fragments inspired by digital aesthetics. In the center of the composition, the human figure becomes a symbol of split identity, caught in a continuous process of disintegration and reconstruction.\nThe warm, earthy tones are pierced by neon accents, created to amplify the tension between the organic and the artificial, between the pictorial past and the technological present. Painted surfaces alternate between near-Renaissance details and 'fractured' areas: pictorial glitches, fragmented lines, superimposed layers, and broken geometries that reveal the fragility of contemporary perception.\nSubtle elements – broken mirrors, shadows of memory, traces of code, and faded symbols – function as reference points for the central themes of Fracturism: the erosion of identity, the overwriting of reality, and the aesthetics of imperfection.\nThe work does not seek to heal the rupture, but to make it visible. 'Fractured Genesis' is a visual testimony to the modern individual: broken, oversaturated, yet profoundly authentic in their own disorder.",
+        "seoTitle": "Fracturism - Fractured Genesis",
+        "seoDescription": "Fracturism - a painterly work realized in the spirit of Fracturism."
+      },
+      "mona": {
+        "title": "„Echoes of Scattered Identity”",
+        "caption": "„Echoes of Scattered Identity” explores the fracturing of feminine identity through a hybrid composition, at the intersection of traditional painting and digital aesthetics. The image starts from a realistic portrait over which fragmented layers, deliberate glitches, and chromatic distortions are superimposed.",
+        "longDescription": "„Echoes of Scattered Identity” is a work where the woman's face disintegrates like a dream reflected in a cracked mirror. Her fragments float between two worlds: one warm and earthy, like a memory, and another cold, electric, like a signal lost in the vastness of the digital.\n\nShades of sienna and ochre try to preserve the familiar contour, while magenta and cyan pulsate like an intrusion, a warning, a truth impossible to ignore.\n\nThe portrait breathes in a broken rhythm. One part remains human and tender, the other breaks, pixelates, and evaporates into glitch — exactly where identity becomes an echo, and the echo remains the only proof of a long-lost wholeness.",
+        "seoTitle": "Fracturism – Echoes of Scattered Identity",
+        "seoDescription": "Fracturist artwork exploring the disintegration of feminine identity through pictorial elements, digital glitches, and chromatic contrast between the organic past and modern aesthetics."
+      },
+      "lisa": {
+        "title": "„The Anatomy of a New Identity”",
+        "caption": "„The Anatomy of a New Identity” belongs to the Fracturism artistic direction and investigates the contemporary process of fragmentation and reconstruction of visual identity. The work is composed of four distinct vertical segments, each realized in a different stylistic register: classical realism, digital glitch, geometric abstraction, and expressionistic distortion.",
+        "longDescription": "„The Anatomy of a New Identity” explores how contemporary identity forms, breaks, and reassembles at the border between the past and the digital age. The portrait is divided into four vertical sections, each painted in an autonomous style — classical realism, digital glitch, geometric abstraction, and expressionistic distortion.\n\nEach fragment seems detached from a different visual world, yet together they reconstruct a coherent figure, caught in a continuous transition. Chromatic interferences — from warm, natural tones in the realistic area to electric cyan, saturated magenta, and neon yellow in the digital segments — highlight the tension between the original and the reconfigured identity.\n\nTraditional pictorial textures, juxtaposed with digital errors, fractured pixels, and broken geometries, create an unstable harmony that suggests the fragility of the self in the era of informational oversaturation. The work functions as a 'digital X-ray of the self,' a visual dissection of the process by which we become multiple identities superimposed between reality, technology, and memory.",
+        "seoTitle": "Fracturism – The Anatomy of a New Identity",
+        "seoDescription": "Fracturist artwork examining the fragmentation and reconstruction of visual identity through classical realism, digital glitch, geometric abstraction, and expressionistic distortion."
+      },
+      "robo": {
+        "title": "„The Digit That Dreams of Being Human”",
+        "caption": "„The Digit That Dreams of Being Human” presents a digitized humanoid figure on the border between artificial and human, trying to overcome its algorithmic nature. Glitched forms and code fragments intertwine with attempts at organicity, and the cold color scheme, traversed by neon accents, emphasizes this transformation. The meditative gaze suggests the desire for identity, turning the work into a metaphor for the age where even humans are continuously reconstructed from fragmented data, images, and memory.",
+        "longDescription": "„The Digit That Dreams of Being Human” explores the fundamental tension between artificial and human, between code and consciousness. The humanoid figure, composed of digital fragments, dispersed pixels, random patterns, and binary code lines, seems to gradually detach from its own mathematical nature to seek a beginning of organic identity.\n\nThe composition uses a palette dominated by deep blue, muted gold, and neon accents, suggesting the transfer between two worlds. The upper part of the portrait, unstable and fragmented by glitches, appears to be in the midst of a rewriting process; the lower part tries to gain volume, texture, a simulated 'flesh.' This visual duality reveals the effort of a digital construct to become something more than looping algorithms.\n\nThe calm, meditative side-gaze conveys a desire for self-transcendence: a digit that aspires to be human. Every pictorial, digital, and fractured layer represents a stage in the search for synchronization between the mechanical and the organic, the virtual and the real, identity and projection.\n\nThe work becomes a metaphor for the contemporary world — a time when we, too, are constantly reconstructed from information, data, images, and fragments of our own memory.",
+        "seoTitle": "Fracturism – The Digit That Dreams of Being Human",
+        "seoDescription": "Fracturist artwork exploring the tension between artificial and human, between code, consciousness, and reconstructed identity in the digital age."
+      }
+    }
+  },
+  "home": {
+    "badge": "Fracturism",
+    "h1": "The beauty of imperfection.",
+    "subtitle": "A movement founded by Teodor G. Dinică. A world broken into new meanings.",
+    "cta": "Discover the Manifesto",
     "sections": {
       "manifest": {
         "title": "Manifesto",
-        "description": "Origins, core principles and positioning among other movements.",
+        "description": "The origin of the movement, core principles, and positioning against other movements.",
         "image": "/images/manifest.jpg",
-        "items": ["Origin of the idea", "Cardinal principles", "Aesthetics of the fragment"]
+        "items": [
+          "Origin of the idea",
+          "Cardinal principles",
+          "The aesthetics of the fragment"
+        ]
       },
       "gallery": {
         "title": "Gallery",
-        "description": "Selected works, key series and visual studies.",
+        "description": "Selection of works, representative series, and visual studies.",
         "image": "/images/gallery.jpg",
-        "items": ["Thematic series", "Details & macro", "Works in progress"]
+        "items": [
+          "Thematic series",
+          "Details and macro",
+          "Works in progress"
+        ]
       },
       "fashion": {
         "title": "Fashion & Design",
-        "description": "Fracturism in textiles, patterns, objects and spaces.",
+        "description": "Applying fracturism to textiles, patterns, objects, and spaces.",
         "image": "/images/fashion.jpg",
-        "items": ["Textures & patterns", "Capsules & collabs", "Functional objects"]
+        "items": [
+          "Textures & patterns",
+          "Capsules & collaborations",
+          "Functional objects"
+        ]
       },
       "artist": {
         "title": "The Artist",
-        "description": "Teodor G. Dinică – path, intentions, studio.",
+        "description": "Teodor G. Dinică – journey, intentions, and studio.",
         "image": "/images/artist.jpg",
-        "items": ["Bio & interviews", "Process & materials", "Artist statement"]
+        "items": [
+          "Bio & interviews",
+          "Process & materials",
+          "Artist statement"
+        ]
       },
       "news": {
         "title": "News",
-        "description": "Announcements, exhibitions and press.",
+        "description": "Announcements, exhibitions, and press appearances.",
         "image": "/images/news.jpg",
-        "items": ["Exhibitions & openings", "Articles & reviews", "Events calendar"]
+        "items": [
+          "Exhibitions & openings",
+          "Articles & reviews",
+          "Event calendar"
+        ]
       },
       "contact": {
         "title": "Contact",
         "description": "Commissions, collaborations, exhibitions. Tell us what you have in mind.",
         "image": "/images/contact.jpg",
-        "items": ["Custom commissions", "Collaborations", "Event invitations"]
+        "items": [
+          "Custom commissions",
+          "Collaborations",
+          "Event invitations"
+        ]
       }
     }
   },
-
+  "footer": {
+    "rights": "Fracturism® All rights reserved."
+  },
   "pages": {
     "manifest": {
       "title": "The Fracturist Manifesto",
       "byline": "By Teodor G. Dinică",
-      "epigraph": "“We can no longer paint the whole world, only its shards…”",
+      "epigraph": "„We can no longer paint the whole world, only its shards…”",
       "sections": {
-        "origin": { "title": "Origin of the Idea", "body": "Intro text..." },
+        "origin": {
+          "title": "Origin of the Idea",
+          "body": "Text to be inserted..."
+        },
         "principles": {
           "title": "Principles of Fracturism",
           "items": [
-            "Fracture as truth of form.",
-            "The fragment as a unit of meaning.",
-            "Tension between absence and contour."
+            "Fracture as the truth of form.",
+            "Fragment as the unit of meaning.",
+            "The tension between absence and contour."
           ]
         },
-        "aesthetics": { "title": "Aesthetics of the Fragment", "body": "Intro text..." },
-        "position": { "title": "Positioning vs. other movements", "body": "Intro text..." }
+        "aesthetics": {
+          "title": "The Aesthetics of the Fragment",
+          "body": "Text to be inserted..."
+        },
+        "position": {
+          "title": "Positioning vs. Other Movements",
+          "body": "Text to be inserted..."
+        }
       }
-    }
-  },
-
-  "meta": {
-    "home": {
-      "title": "Fracturism – The Art of Rupture",
-      "description": "A movement founded by Teodor G. Dinică."
-    },
-    "manifest": {
-      "title": "The Fracturist Manifesto",
-      "description": "Principles, aesthetics and positioning."
     }
   }
 }

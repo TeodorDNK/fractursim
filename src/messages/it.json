@@ -1,96 +1,290 @@
 {
-  "brand": "Fratturismo",
+  "brand": "Fracturism",
   "nav": {
     "home": "Home",
     "manifest": "Manifesto",
     "gallery": "Galleria",
     "fashion": "Moda & Design",
-    "artist": "L’Artista",
+    "artist": "L'Artista",
     "news": "Notizie",
-    "contact": "Contatto",
+    "contact": "Contatti",
     "legal": "Legale"
   },
-    "contact": {
-    "title": "Scrivici un messaggio",
-    "description": "Lascia la tua e-mail e il messaggio. Ti risponderemo al più presto.",
-    "emailLabel": "E-mail",
-    "messageLabel": "Messaggio",
-    "submit": "Invia",
-    "success": "Messaggio inviato. Grazie!",
-    "error": "Invio non riuscito. Riprova."
-  },
-  "footer": { "rights": "Fratturismo® Tutti i diritti riservati." },
-
-"home": {
-    "sections": {
-      "manifest": {
-        "title": "Manifesto",
-        "description": "Origini, principi fondamentali e posizionamento tra altri movimenti.",
-        "image": "/images/manifest.jpg",
-        "items": ["Origine dell’idea", "Principi cardinali", "Estetica del frammento"]
-      },
-      "gallery": {
-        "title": "Galleria",
-        "description": "Opere selezionate, serie chiave e studi visivi.",
-        "image": "/images/gallery.jpg",
-        "items": ["Serie tematiche", "Dettagli & macro", "Opere in corso"]
-      },
-      "fashion": {
-        "title": "Moda & Design",
-        "description": "Fratturismo in tessuti, pattern, oggetti e spazi.",
-        "image": "/images/fashion.jpg",
-        "items": ["Texture & pattern", "Capsule & collaborazioni", "Oggetti funzionali"]
-      },
-      "artist": {
-        "title": "L’Artista",
-        "description": "Teodor G. Dinică – percorso, intenti, studio.",
-        "image": "/images/artist.jpg",
-        "items": ["Bio & interviste", "Processo & materiali", "Dichiarazione d’artista"]
-      },
-      "news": {
-        "title": "Notizie",
-        "description": "Annunci, mostre e stampa.",
-        "image": "/images/news.jpg",
-        "items": ["Mostre & vernissage", "Articoli & recensioni", "Calendario eventi"]
-      },
-      "contact": {
-        "title": "Contatto",
-        "description": "Commissioni, collaborazioni, mostre. Raccontaci la tua idea.",
-        "image": "/images/contact.jpg",
-        "items": ["Commissioni su misura", "Collaborazioni", "Inviti a eventi"]
-      }
+  "meta": {
+    "fashion": {
+      "title": "Moda & Design – Fracturism",
+      "description": "Collezioni capsule, oggetti e tessuti influenzati dal linguaggio Fratturista."
     }
-  },
 
-  "pages": {
-    "manifest": {
-      "title": "Il Manifesto Fratturista",
-      "byline": "Di Teodor G. Dinică",
-      "epigraph": "«Non possiamo più dipingere il mondo intero, ma solo i suoi frammenti…»",
-      "sections": {
-        "origin": { "title": "Origine dell’idea", "body": "Testo introduttivo..." },
-        "principles": {
-          "title": "Principi del Fratturismo",
-          "items": [
-            "La frattura come verità della forma.",
-            "Il frammento come unità di senso.",
-            "Tensione tra assenza e contorno."
-          ]
-        },
-        "aesthetics": { "title": "Estetica del frammento", "body": "Testo introduttivo..." },
-        "position": { "title": "Posizionamento vs. altri movimenti", "body": "Testo introduttivo..." }
+  },
+  "fashion": {
+    "title": "Moda & Design",
+    "subtitle": "Forme fratturate, ritmo ornamentale e materiali naturali — applicati a moda, oggetto e spazio.",
+    "sectionTitleCollections": "Collezioni",
+    "sectionTitleMaterials": "Materiali & Processo",
+    "sectionTitleLookbook": "Lookbook",
+    "linkTextCollection": "Vedi collezione →",
+    "defaultSeasonTag": "Capsula",
+    "materialsList": [
+      "Cotone organico, lino, miscele riciclate.",
+      "Stampa a base d'acqua; serigrafia artigianale.",
+      "Tagli asimmetrici, dettagli raw-edge, riparazioni visibili.",
+      "Piccole serie, tracciabilità e iterazioni controllate."
+    ],
+    "ctaText": "Cerchi collaborazioni o edizioni speciali?",
+    "ctaLink": "Scrivici →",
+    "defaultMaterialItem": "Nessuna informazione sui materiali disponibile.",
+    "collections": [
+      {
+        "slug": "capsula-ritm-fracturat",
+        "title": "Capsula • Ritmo Fratturato",
+        "blurb": "Silhouette pulite, tagli asimmetrici e stampe che mantengono l'impronta della fessura.",
+        "cover": "/images/1.jpg",
+        "season": "AW 2025"
+      },
+      {
+        "slug": "texturi-ceramica-textil",
+        "title": "Texture • Ceramica & Tessile",
+        "blurb": "Dialogo tra la porosità della ceramica e la morbidezza delle fibre. Superfici che respirano.",
+        "cover": "/images/2.jpg",
+        "season": "SS 2025"
+      },
+      {
+        "slug": "obiecte-pentru-interior",
+        "title": "Oggetti per Interni",
+        "blurb": "Piccoli corpi luminosi, vassoi, supporti, tutti composti da motivi ricorrenti.",
+        "cover": "/images/3.jpg"
       }
-    }
+    ]
   },
-
   "meta": {
     "home": {
-      "title": "Fratturismo – L’arte della rottura",
-      "description": "Un movimento fondato da Teodor G. Dinică."
+      "title": "Fracturism – L'Arte della Rottura",
+      "description": "Un movimento fondato da Teodor G. Dinică. La bellezza dell'imperfezione."
     },
     "manifest": {
       "title": "Il Manifesto Fratturista",
       "description": "Principi, estetica e posizionamento."
+    },
+    "artist": {
+      "title": "Teodor G. Dinică – L'Artista",
+      "description": "L'autore del Fratturismo. Biografia, visione e opere."
+    },
+    "contact": {
+      "title": "Contatti – Fracturism",
+      "description": "Contatta il team Fracturism per collaborazioni, mostre e dialogo artistico."
+    }
+  },
+  "artist": {
+    "title": "Teodor G. Dinică",
+    "subtitle": "Fracturism – Oltre la Perfezione, Nelle Fessure",
+    "bio": {
+      "p1": "Teodor G. Dinică è l'artista e fondatore della corrente Fratturismo – un'esplorazione della bellezza nella rottura, dell'ordine che nasce dalle fessure.",
+      "p2": "Nato a Păunești, Vrancea, cresciuto tra materia grezza e poesia visiva, orienta la sua pratica verso composizioni frammentate, texture stratificate e tensioni controllate.",
+      "p3": "Nelle sue opere, il 'difetto' diventa linguaggio, e l'incidente – metodo. La frattura è trattata come risorsa, non come ostacolo."
+    },
+    "themesTitle": "Temi & Preoccupazioni",
+    "themes": [
+      "La bellezza dell'imperfezione",
+      "Texture fratturate e composizioni stratificate",
+      "L'ordine che emerge dal caos"
+    ],
+    "timelineTitle": "Tappe Fondamentali",
+    "timeline": [
+      {
+        "year": "2018–2020",
+        "text": "Esplorazioni in composizioni frammentate e mixed-media."
+      },
+      {
+        "year": "2021–2023",
+        "text": "Consolidamento del linguaggio visivo Fratturista."
+      },
+      {
+        "year": "2024–prezent",
+        "text": "Serie tematiche: rottura, cicatrizzazione, memoria materiale."
+      }
+    ],
+    "quote": {
+      "text": "„Fracturism – Un Nuovo Linguaggio dei Frammenti.”",
+      "author": "Teodor G. Dinică"
+    },
+    "ctaManifest": "Il Manifesto Fratturista",
+    "ctaGallery": "Vedi Galleria"
+  },
+  "contact": {
+    "title": "Contatti",
+    "subtitle": "Per collaborazioni, mostre o interviste, puoi scriverci direttamente.",
+    "formTitle": "Inviaci un messaggio",
+    "form": {
+      "namePlaceholder": "Nome",
+      "emailPlaceholder": "Email",
+      "messagePlaceholder": "Messaggio",
+      "submit": "Invia"
+    },
+    "social": {
+      "email": "Email",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
+  },
+  "galleryItem": {
+    "notFound": "Opera non trovata.",
+    "sectionTitle": "Dettagli completi sull'opera",
+    "defaultSeoDescription": "Dettaglio opera Fracturism."
+  },
+  "gallery": {
+    "title": "Galleria",
+    "subtitle": "Opere selezionate e le loro storie.",
+    "items": {
+      "portret-si-materie": {
+        "title": "Ritratto e Materia",
+        "caption": "Il volto da vicino diventa texture. La frattura non nasconde, rivela – un portale verso il significato.",
+        "longDescription": "Dettaglio: Quest'opera esplora la tensione tra la forma classica del ritratto e la disintegrazione della materia. Quando si guarda da vicino, le linee diventano fessure, rivelando la fragilità e la complessità interiore. È un dialogo tra realtà percepita e sentita. Dimensione: 100x70 cm, Tecnica: Acrilico su tela, Anno: 2023.",
+        "seoTitle": "Ritratto e Materia - Arte Fratturista | Fracturism",
+        "seoDescription": "Scopri Ritratto e Materia: un'opera che esplora la fragilità e la disintegrazione. Dettagli su dimensione, tecnica e la storia dietro la creazione Fratturista."
+      },
+      "moneda-fracturista": {
+        "title": "L'Eterno in Errore",
+        "caption": "Il volto scultoreo, bloccato tra stabilità e distorsione digitale, diventa la metafora di una coscienza che cerca significato in un mondo in continua disintegrazione.",
+        "longDescription": "In 'L'Eterno in Errore', la forma canonica della bellezza classica è sottoposta a uno smontaggio controllato. La scultura, un tempo simbolo di ordine, ragione e armonia, è attraversata da flussi di rottura visiva, errori cromatici e interferenze digitali. Così, l'immagine diventa un campo di tensione tra due mondi: uno di stabilità mitica e un altro di instabilità contemporanea.\n\nLa frammentazione non distrugge, ma rivela. L'errore non è solo un difetto tecnico, ma un principio esistenziale. Il volto non si disfa gratuitamente, ma viene 'riscritto' dal caos del tempo presente. In questa fessura tra ciò che era considerato eterno e ciò che è inevitabilmente instabile nasce il senso fratturista dell'opera.\n\nIl colore — tra il turchese freddo, il rosa elettrico e il grigio minerale — funziona come una pulsazione tra vita, memoria e artificiale. Lo sfondo naturale e architettonico evoca un mondo ancora riconoscibile, ma già contaminato dalla distorsione, suggerendo che nessuno spazio resta intatto di fronte all'errore.\n\n'L'Eterno in Errore' non è una semplice rappresentazione della degradazione, ma una meditazione sull'identità nell'era della frammentazione. È il ritratto di un'umanità che, pur appoggiandosi alle forme del passato, è condannata a riconfigurarsi continuamente attraverso la fessura, il difetto, l'instabilità.",
+        "seoTitle": "Fracturism - L'Eterno in Errore",
+        "seoDescription": "Fracturism - In 'L'Eterno in Errore', la forma canonica della bellezza classica è sottoposta a uno smontaggio controllato."
+      },
+      "ornament-ordine-ruptura": {
+        "title": "La realtà è mediata, filtrata, frammentata",
+        "caption": "Un corpo immobile in uno spazio clinico guarda, attraverso un artificio tecnologico, verso un mondo che non gli appartiene più. La realtà è mediata, filtrata, frammentata. La libertà esiste solo come simulazione. La coscienza rimane prigioniera tra pareti fredde e promesse digitali.",
+        "longDescription": "L'opera rappresenta uno stato di sospensione tra vita e proiezione, tra corpo e evasione, tra presente duro e illusione confortante. Il personaggio, immobilizzato in un letto d'ospedale, è connesso non alla realtà, ma a una sua ricostruzione idealizzata: un'isola, un mare calmo, un cielo senza malattia. Ma questa libertà è solo un'interfaccia.\n\nGli occhiali VR diventano il simbolo fratturista dell'evasione artificiale — una rottura tra ciò che viene vissuto e ciò che è permesso immaginare. La stanza fredda, medica, è posseduta da un blu quasi uniforme, segno di stagnazione, del tempo che non scorre più naturalmente, ma è misurato dagli apparecchi. L'orologio sullo sfondo non indica più la vita, ma il suo monitoraggio.\n\nLa felicità è proiettata sulla parete come un paesaggio senza corpo, senza dolore, senza peso. La palma e il mare non sono reali — sono solo codificazioni del desiderio umano di evasione dalla sofferenza. Così, l'opera non parla di speranza, ma della dipendenza dal simulacro.\n\nLa frattura non è visivamente violenta, ma silenziosa: tra il corpo vulnerabile e l'universo perfetto, tra i limiti biologici e la promessa dell'infinito digitale. L'uomo non sogna più — è connesso alla propria illusione.\n\nQuesta è una meditazione su un futuro in cui la sofferenza non viene guarita, ma sfocata dall'immagine. Un mondo in cui il dolore non scompare, ma è solo coperto da luce artificiale.",
+        "seoTitle": "Fracturism - La realtà è mediata, filtrata, frammentata",
+        "seoDescription": "Fracturism - Gli occhiali VR diventano il simbolo fratturista dell'evasione artificiale."
+      },
+      "separator": {
+        "title": "„Genesi Fratturata”",
+        "caption": "„Genesi Fratturata” è un'opera pittorica in stile fratturista che combina forme classiche con rotture, distorsioni ed elementi ispirati all'estetica digitale.",
+        "longDescription": "„Genesi Fratturata” è un'opera pittorica realizzata nello spirito del Fratturismo, in cui le forme classiche si fondono con rotture deliberate, distorsioni cromatiche e frammenti visivi ispirati all'estetica digitale. Al centro della composizione, la figura umana diventa un simbolo dell'identità scissa, in un continuo processo di disintegrazione e ricostruzione.\nI toni terrosi, caldi, sono trapassati da accenti neon, creati per amplificare la tensione tra organico e artificiale, tra passato pittorico e presente tecnologico. Le superfici dipinte si alternano tra dettagli quasi rinascimentali e zone 'fratturate': glitch pittorici, linee frammentate, strati sovrapposti e geometrie rotte che svelano la fragilità della percezione contemporanea.\nElementi sottili – specchi rotti, ombre della memoria, tracce di codice e simboli sbiaditi – fungono da punti di riferimento per i temi centrali del Fratturismo: l'erosione dell'identità, la sovrascrittura della realtà e l'estetica dell'imperfezione.\nL'opera non cerca di guarire la rottura, ma di renderla visibile. 'Genesi Fratturata' è una testimonianza visiva dell'individuo moderno: spezzato, supersaturo, ma profondamente autentico nel proprio disordine.",
+        "seoTitle": "Fracturism - Genesi Fratturata",
+        "seoDescription": "Fracturism - opera pittorica realizzata nello spirito del Fratturismo."
+      },
+      "mona": {
+        "title": "„Echi dell'Identità Dispersa”",
+        "caption": "„Echi dell'Identità Dispersa” esplora la frammentazione dell'identità femminile attraverso una composizione ibrida, all'intersezione tra pittura tradizionale ed estetica digitale. L'immagine parte da un ritratto realista su cui si sovrappongono strati frammentati, glitch deliberati e distorsioni cromatiche.",
+        "longDescription": "„Echi dell'Identità Dispersa” è un'opera in cui il volto della donna si disfa come un sogno riflesso in uno specchio incrinato. I suoi frammenti fluttuano tra due mondi: uno caldo e terroso, come un ricordo, e un altro freddo, elettrico, come un segnale perso nella vastità del digitale.\n\nLe sfumature di terra di Siena e ocra cercano di preservare il contorno familiare, mentre magenta e ciano pulsano come un'intrusione, un avvertimento, una verità impossibile da ignorare.\n\nIl ritratto respira in un ritmo spezzato. Una parte rimane umana e tenera, l'altra si rompe, si pixela e svanisce in glitch — esattamente dove l'identità diventa un'eco, e l'eco resta l'unica prova di un'integrità perduta da tempo.",
+        "seoTitle": "Fracturism – Echi dell'Identità Dispersa",
+        "seoDescription": "Opera fratturista che esplora la disintegrazione dell'identità femminile attraverso elementi pittorici, glitch digitali e contrasto cromatico tra il passato organico e l'estetica moderna."
+      },
+      "lisa": {
+        "title": "„L'Anatomia di una Nuova Identità”",
+        "caption": "„L'Anatomia di una Nuova Identità” appartiene alla direzione artistica Fratturismo e indaga il processo contemporaneo di frammentazione e ricostruzione dell'identità visuale. L'opera è composta da quattro segmenti verticali distinti, ciascuno realizzato in un registro stilistico diverso: realismo classico, glitch digitale, astrazione geometrica e distorsione espressionista.",
+        "longDescription": "„L'Anatomia di una Nuova Identità” esplora il modo in cui l'identità contemporanea si forma, si rompe e si riassembla al confine tra il passato e l'era digitale. Il ritratto è diviso in quattro sezioni verticali, ciascuna dipinta in uno stile autonomo — realismo classico, glitch digitale, astrazione geometrica e distorsione espressionista.\n\nOgni frammento sembra staccato da un mondo visivo differente, ma insieme ricostruiscono una figura coerente, catturata in una transizione continua. Le interferenze cromatiche — dai toni caldi e naturali nella zona realista fino al ciano elettrico, magenta saturo e giallo neon nei segmenti digitali — evidenziano la tensione tra l'identità originaria e quella riconfigurata.\n\nLe texture pittoriche tradizionali, giustapposte a errori digitali, pixel fratturati e geometrie rotte, creano un'armonia instabile che suggerisce la fragilità del sé nell'epoca della sovrasaturazione informativa. L'opera funziona come una 'radiografia digitale del sé', una dissezione visuale del processo attraverso il quale diventiamo identità multiple sovrapposte tra realtà, tecnologia e memoria.",
+        "seoTitle": "Fracturism – L'Anatomia di una Nuova Identità",
+        "seoDescription": "Opera fratturista che esamina la frammentazione e la ricostruzione dell'identità visuale attraverso realismo classico, glitch digitale, astrazione geometrica e distorsione espressionista."
+      },
+      "robo": {
+        "title": "„La Cifra che Sogna di Essere Uomo”",
+        "caption": "„La Cifra che Sogna di Essere Uomo” presenta una figura umanoide digitalizzata al confine tra artificiale e umano, che cerca di superare la sua natura algoritmica. Le forme glitchate e i frammenti di codice si intrecciano con tentativi di organicità, e la cromatica fredda, attraversata da accenti neon, sottolinea questa trasformazione. Lo sguardo meditativo suggerisce il desiderio di identità, trasformando l'opera in una metafora dell'epoca in cui anche gli esseri umani vengono continuamente ricostruiti da dati frammentati, immagini e memoria.",
+        "longDescription": "„La Cifra che Sogna di Essere Uomo” esplora la tensione fondamentale tra artificiale e umano, tra codice e coscienza. La figura umanoide, composta da frammenti digitali, pixel dispersi, pattern casuali e linee di codice binario, sembra staccarsi gradualmente dalla propria natura matematica per cercare un inizio di identità organica.\n\nLa composizione utilizza una palette dominata dal blu profondo, oro spento e accenti neon, suggerendo il trasferimento tra due mondi. La parte superiore del ritratto, instabile e frammentata da glitch, sembra essere in pieno processo di riscrittura; la parte inferiore cerca di acquisire volume, texture, una 'carne' simulata. Questa dualità visuale rivela lo sforzo di un costrutto digitale di diventare qualcosa di più che algoritmi in loop.\n\nLo sguardo laterale, calmo e meditativo, trasmette un desiderio di auto-superamento: una cifra che aspira a essere uomo. Ogni strato pittorico, digitale e fratturato, rappresenta una tappa nella ricerca della sincronizzazione tra meccanico e organico, virtuale e reale, identità e proiezione.\n\nL'opera diventa una metafora per il mondo contemporaneo — un tempo in cui anche noi, esseri umani, siamo ricostruiti permanentemente da informazioni, dati, immagini e frammenti della nostra memoria.",
+        "seoTitle": "Fracturism – La Cifra che Sogna di Essere Uomo",
+        "seoDescription": "Opera fratturista che esplora la tensione tra artificiale e umano, tra codice, coscienza e identità ricostruita nell'era digitale."
+      }
+    }
+  },
+  "home": {
+    "badge": "Fracturism",
+    "h1": "La bellezza dell'imperfezione.",
+    "subtitle": "Una corrente fondata da Teodor G. Dinică. Un mondo rotto in nuovi significati.",
+    "cta": "Scopri il Manifesto",
+    "sections": {
+      "manifest": {
+        "title": "Manifesto",
+        "description": "L'origine della corrente, i principi di base e il posizionamento rispetto ad altri movimenti.",
+        "image": "/images/manifest.jpg",
+        "items": [
+          "L'origine dell'idea",
+          "Principi cardinali",
+          "L'estetica del frammento"
+        ]
+      },
+      "gallery": {
+        "title": "Galleria",
+        "description": "Selezione di opere, serie rappresentative e studi visuali.",
+        "image": "/images/gallery.jpg",
+        "items": [
+          "Serie tematiche",
+          "Dettagli e macro",
+          "Opere in corso"
+        ]
+      },
+      "fashion": {
+        "title": "Moda & Design",
+        "description": "L'applicazione del fratturismo in tessuti, modelli, oggetti e spazi.",
+        "image": "/images/fashion.jpg",
+        "items": [
+          "Texture & pattern",
+          "Capsule & collaborazioni",
+          "Oggetti funzionali"
+        ]
+      },
+      "artist": {
+        "title": "L'Artista",
+        "description": "Teodor G. Dinică – percorso, intenzioni e atelier.",
+        "image": "/images/artist.jpg",
+        "items": [
+          "Bio & interviste",
+          "Processo & materiali",
+          "Dichiarazione artistica"
+        ]
+      },
+      "news": {
+        "title": "Notizie",
+        "description": "Annunci, mostre e apparizioni sulla stampa.",
+        "image": "/images/news.jpg",
+        "items": [
+          "Mostre & vernissage",
+          "Articoli & recensioni",
+          "Calendario eventi"
+        ]
+      },
+      "contact": {
+        "title": "Contatti",
+        "description": "Ordini, collaborazioni, mostre. Dicci cosa hai in mente.",
+        "image": "/images/contact.jpg",
+        "items": [
+          "Ordini personalizzati",
+          "Collaborazioni",
+          "Inviti a eventi"
+        ]
+      }
+    }
+  },
+  "footer": {
+    "rights": "Fracturism® Tutti i diritti riservati."
+  },
+  "pages": {
+    "manifest": {
+      "title": "Il Manifesto Fratturista",
+      "byline": "Di Teodor G. Dinică",
+      "epigraph": "„Non possiamo più dipingere il mondo intero, ma solo i suoi frammenti…”",
+      "sections": {
+        "origin": {
+          "title": "Origine dell'Idea",
+          "body": "Testo da inserire..."
+        },
+        "principles": {
+          "title": "Principi del Fratturismo",
+          "items": [
+            "La frattura come verità della forma.",
+            "Il frammento come unità di significato.",
+            "La tensione tra assenza e contorno."
+          ]
+        },
+        "aesthetics": {
+          "title": "L'Estetica del Frammento",
+          "body": "Testo da inserire..."
+        },
+        "position": {
+          "title": "Posizionamento vs. Altre Correnti",
+          "body": "Testo da inserire..."
+        }
+      }
     }
   }
 }
