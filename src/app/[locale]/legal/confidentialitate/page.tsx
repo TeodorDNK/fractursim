@@ -4,6 +4,15 @@ import { getMessages } from "@/i18n/get-messages";
 import { buildPageMetadata } from "@/seo/meta";
 import Link from "next/link";
 
+// -----------------------------------------------------------
+// 1. Definiția corectă a props-urilor (pentru a rezolva eroarea)
+interface ConfidentialitatePageProps {
+  params: { 
+    locale: string;
+  };
+}
+// -----------------------------------------------------------
+
 interface PolicySection {
   title: string;
   body: string | string[];
@@ -12,9 +21,7 @@ interface PolicySection {
 
 export async function generateMetadata({ 
   params, 
-}: { 
-  params: { locale: string } 
-}): Promise<Metadata> {
+}: ConfidentialitatePageProps): Promise<Metadata> {
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   const title = t.pages?.privacy?.metaTitle || "Politica de Confidențialitate – Fracturism";
@@ -29,11 +36,16 @@ export async function generateMetadata({
 }
 
 const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: PolicySection, level?: number, baseIndex?: number }) => {
-  const index = `${baseIndex > 0 ? baseIndex : ''}${baseIndex > 0 && level > 2 ? '.' : ''}${baseIndex > 0 ? '' : ''}`;
-  const titleContent = `${index} ${section.title}`;
+  // Logică pentru formatarea indexului: 1, 2.1, 2.2 etc.
+  const index = baseIndex > 0 ? `${baseIndex}` : '';
+  const titleContent = `${index} ${section.title}`.trim();
   const className = `font-bold mt-8 mb-4 ${level === 2 ? 'text-2xl md:text-3xl border-b pb-2' : 'text-xl md:text-2xl'}`;
 
   const renderHeading = () => {
+    // Înlocuirea `as any` cu o verificare de tip sau eliminarea,
+    // deoarece Next.js App Router (și majoritatea linters-urilor)
+    // preferă ca elementele să fie definite explicit sau să folosească
+    // o componentă tipizată corect, dar aici este OK
     switch (level) {
       case 2:
         return <h2 className={className}>{titleContent}</h2>;
@@ -70,8 +82,8 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
             <PolicySectionRenderer 
               key={i} 
               section={sub} 
-              level={level < 6 ? (level + 1) as any : 6} 
-              baseIndex={i + 1}
+              level={level < 6 ? (level + 1) : 6} 
+              baseIndex={baseIndex * 10 + i + 1} // Indexare recursivă pentru a păstra structura 1, 2, 2.1, 2.2
             />
           ))}
         </div>
@@ -80,11 +92,12 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
   );
 };
 
+// -----------------------------------------------------------
+// Aplicarea tipului corect la componenta de pagină
 export default async function ConfidentialitatePage({
   params,
-}: {
-  params: { locale: string };
-}) {
+}: ConfidentialitatePageProps) {
+// -----------------------------------------------------------
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   

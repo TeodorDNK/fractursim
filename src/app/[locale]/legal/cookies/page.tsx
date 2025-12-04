@@ -4,6 +4,15 @@ import { getMessages } from "@/i18n/get-messages";
 import { buildPageMetadata } from "@/seo/meta";
 import Link from "next/link";
 
+// -----------------------------------------------------------
+// 1. Definiția corectă a props-urilor (pentru a rezolva eroarea de tip)
+interface CookiesPageProps {
+  params: { 
+    locale: string;
+  };
+}
+// -----------------------------------------------------------
+
 interface PolicySection {
   title: string;
   body: string | string[];
@@ -13,9 +22,7 @@ interface PolicySection {
 // SEO
 export async function generateMetadata({ 
   params, 
-}: { 
-  params: { locale: string } 
-}): Promise<Metadata> {
+}: CookiesPageProps): Promise<Metadata> { // Tipul aplicat aici
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   // Folosim noile chei de fallback
@@ -32,8 +39,9 @@ export async function generateMetadata({
 
 // Renderizare Secțiune (componenta reutilizată)
 const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: PolicySection, level?: number, baseIndex?: number }) => {
-  const index = `${baseIndex > 0 ? baseIndex : ''}${baseIndex > 0 && level > 2 ? '.' : ''}${baseIndex > 0 ? '' : ''}`;
-  const titleContent = `${index} ${section.title}`;
+  // Logică pentru formatarea indexului
+  const index = baseIndex > 0 ? `${baseIndex}` : '';
+  const titleContent = `${index} ${section.title}`.trim();
   const className = `font-bold mt-8 mb-4 ${level === 2 ? 'text-2xl md:text-3xl border-b pb-2' : 'text-xl md:text-2xl'}`;
 
   const renderHeading = () => {
@@ -73,8 +81,9 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
             <PolicySectionRenderer 
               key={i} 
               section={sub} 
-              level={level < 6 ? (level + 1) as any : 6} 
-              baseIndex={i + 1}
+              level={level < 6 ? (level + 1) : 6} 
+              // Am ajustat baseIndex pentru recursivitate, ca la fișierul anterior
+              baseIndex={baseIndex * 10 + i + 1} 
             />
           ))}
         </div>
@@ -86,9 +95,7 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
 // Componenta Principală a Paginii
 export default async function CookiesPage({
   params,
-}: {
-  params: { locale: string };
-}) {
+}: CookiesPageProps) { // Tipul aplicat aici
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   

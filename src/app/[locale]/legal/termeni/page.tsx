@@ -2,6 +2,16 @@ import type { Metadata } from "next";
 import { isLocale, type Locale } from "@/i18n/routing"; 
 import { getMessages } from "@/i18n/get-messages"; 
 import { buildPageMetadata } from "@/seo/meta";
+import Link from "next/link"; // Am adăugat Link (dacă ai nevoie de el mai jos, deși nu este folosit în footer)
+
+// -----------------------------------------------------------
+// 1. Definiția corectă a props-urilor (pentru a rezolva eroarea de tip)
+interface TermeniPageProps {
+  params: { 
+    locale: string;
+  };
+}
+// -----------------------------------------------------------
 
 interface TermSection {
   title: string;
@@ -11,9 +21,7 @@ interface TermSection {
 
 export async function generateMetadata({ 
   params, 
-}: { 
-  params: { locale: string } 
-}): Promise<Metadata> {
+}: TermeniPageProps): Promise<Metadata> { // Tipul aplicat aici
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   const title = t.pages?.terms?.metaTitle || "Termene și Condiții – Fracturism";
@@ -28,8 +36,9 @@ export async function generateMetadata({
 }
 
 const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: TermSection, level?: number, baseIndex?: number }) => {
-  const index = `${baseIndex > 0 ? baseIndex : ''}${baseIndex > 0 && level > 2 ? '.' : ''}${baseIndex > 0 ? '' : ''}`;
-  const titleContent = `${index} ${section.title}`;
+  // Logică pentru formatarea indexului
+  const index = baseIndex > 0 ? `${baseIndex}` : '';
+  const titleContent = `${index} ${section.title}`.trim();
   const className = `font-bold mt-8 mb-4 ${level === 2 ? 'text-2xl md:text-3xl border-b pb-2' : 'text-xl md:text-2xl'}`;
 
   const renderHeading = () => {
@@ -69,8 +78,8 @@ const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: T
             <TermSectionRenderer 
               key={i} 
               section={sub} 
-              level={level < 6 ? (level + 1) as any : 6} 
-              baseIndex={i + 1}
+              level={level < 6 ? (level + 1) : 6} 
+              baseIndex={baseIndex * 10 + i + 1} 
             />
           ))}
         </div>
@@ -81,9 +90,7 @@ const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: T
 
 export default async function TermeniPage({
   params,
-}: {
-  params: { locale: string };
-}) {
+}: TermeniPageProps) { // Tipul aplicat aici
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   
