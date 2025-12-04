@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { isLocale, type Locale } from "@/i18n/routing"; 
 import { getMessages } from "@/i18n/get-messages"; 
 import { buildPageMetadata } from "@/seo/meta";
-import Link from "next/link"; // Am adăugat Link (dacă ai nevoie de el mai jos, deși nu este folosit în footer)
+import Link from "next/link"; 
 
 // -----------------------------------------------------------
-// 1. Definiția corectă a props-urilor (pentru a rezolva eroarea de tip)
+// 1. Definiția corectă a props-urilor (FĂRĂ constrângeri PageProps)
 interface TermeniPageProps {
   params: { 
     locale: string;
@@ -35,7 +35,14 @@ export async function generateMetadata({
   });
 }
 
-const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: TermSection, level?: number, baseIndex?: number }) => {
+// Tip separat pentru componenta recursivă
+interface TermSectionRendererProps {
+  section: TermSection;
+  level?: 2 | 3 | 4 | 5 | 6; // Tipuri explicite pentru nivel
+  baseIndex?: number;
+}
+
+const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: TermSectionRendererProps) => { // Tipul aplicat aici
   // Logică pentru formatarea indexului
   const index = baseIndex > 0 ? `${baseIndex}` : '';
   const titleContent = `${index} ${section.title}`.trim();
@@ -78,7 +85,8 @@ const TermSectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: T
             <TermSectionRenderer 
               key={i} 
               section={sub} 
-              level={level < 6 ? (level + 1) : 6} 
+              // Asigurăm că nivelul rămâne în limitele definite (2-6)
+              level={(level < 6 ? level + 1 : 6) as 2 | 3 | 4 | 5 | 6} 
               baseIndex={baseIndex * 10 + i + 1} 
             />
           ))}

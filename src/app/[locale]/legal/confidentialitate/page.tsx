@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/seo/meta";
 import Link from "next/link";
 
 // -----------------------------------------------------------
-// 1. Definiția corectă a props-urilor (pentru a rezolva eroarea)
+// 1. Definiția corectă a props-urilor (FĂRĂ constrângeri PageProps)
 interface ConfidentialitatePageProps {
   params: { 
     locale: string;
@@ -21,7 +21,7 @@ interface PolicySection {
 
 export async function generateMetadata({ 
   params, 
-}: ConfidentialitatePageProps): Promise<Metadata> {
+}: ConfidentialitatePageProps): Promise<Metadata> { // Folosim doar tipul local
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   const title = t.pages?.privacy?.metaTitle || "Politica de Confidențialitate – Fracturism";
@@ -35,17 +35,21 @@ export async function generateMetadata({
   });
 }
 
-const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: PolicySection, level?: number, baseIndex?: number }) => {
+// Tip separat pentru componenta recursivă
+interface PolicySectionRendererProps {
+  section: PolicySection;
+  level?: 2 | 3 | 4 | 5 | 6; // Tipuri explicite pentru nivel
+  baseIndex?: number;
+}
+
+const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: PolicySectionRendererProps) => {
   // Logică pentru formatarea indexului: 1, 2.1, 2.2 etc.
   const index = baseIndex > 0 ? `${baseIndex}` : '';
   const titleContent = `${index} ${section.title}`.trim();
   const className = `font-bold mt-8 mb-4 ${level === 2 ? 'text-2xl md:text-3xl border-b pb-2' : 'text-xl md:text-2xl'}`;
 
   const renderHeading = () => {
-    // Înlocuirea `as any` cu o verificare de tip sau eliminarea,
-    // deoarece Next.js App Router (și majoritatea linters-urilor)
-    // preferă ca elementele să fie definite explicit sau să folosească
-    // o componentă tipizată corect, dar aici este OK
+    // Tipul 'level' este deja restrâns la 2-6
     switch (level) {
       case 2:
         return <h2 className={className}>{titleContent}</h2>;
@@ -58,6 +62,7 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
       case 6:
         return <h6 className={className}>{titleContent}</h6>;
       default:
+        // Cazul default nu ar trebui atins datorită tipizării
         return <h2 className={className}>{titleContent}</h2>;
     }
   };
@@ -82,8 +87,9 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
             <PolicySectionRenderer 
               key={i} 
               section={sub} 
-              level={level < 6 ? (level + 1) : 6} 
-              baseIndex={baseIndex * 10 + i + 1} // Indexare recursivă pentru a păstra structura 1, 2, 2.1, 2.2
+              // Asigurăm că nivelul rămâne în limitele definite (2-6)
+              level={(level < 6 ? level + 1 : 6) as 2 | 3 | 4 | 5 | 6} 
+              baseIndex={baseIndex * 10 + i + 1}
             />
           ))}
         </div>
@@ -92,12 +98,9 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
   );
 };
 
-// -----------------------------------------------------------
-// Aplicarea tipului corect la componenta de pagină
 export default async function ConfidentialitatePage({
   params,
 }: ConfidentialitatePageProps) {
-// -----------------------------------------------------------
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   

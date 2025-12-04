@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/seo/meta";
 import Link from "next/link";
 
 // -----------------------------------------------------------
-// 1. Definiția corectă a props-urilor (pentru a rezolva eroarea de tip)
+// 1. Definiția corectă a props-urilor (FĂRĂ constrângeri PageProps)
 interface CookiesPageProps {
   params: { 
     locale: string;
@@ -22,7 +22,7 @@ interface PolicySection {
 // SEO
 export async function generateMetadata({ 
   params, 
-}: CookiesPageProps): Promise<Metadata> { // Tipul aplicat aici
+}: CookiesPageProps): Promise<Metadata> { // Folosim tipul local
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "ro";
   const t = await getMessages(locale);
   // Folosim noile chei de fallback
@@ -37,8 +37,15 @@ export async function generateMetadata({
   });
 }
 
+// Tip separat pentru componenta recursivă
+interface PolicySectionRendererProps {
+  section: PolicySection;
+  level?: 2 | 3 | 4 | 5 | 6; 
+  baseIndex?: number;
+}
+
 // Renderizare Secțiune (componenta reutilizată)
-const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section: PolicySection, level?: number, baseIndex?: number }) => {
+const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: PolicySectionRendererProps) => { // Tipul aplicat aici
   // Logică pentru formatarea indexului
   const index = baseIndex > 0 ? `${baseIndex}` : '';
   const titleContent = `${index} ${section.title}`.trim();
@@ -57,6 +64,7 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
       case 6:
         return <h6 className={className}>{titleContent}</h6>;
       default:
+        // Cazul default nu ar trebui atins datorită tipizării
         return <h2 className={className}>{titleContent}</h2>;
     }
   };
@@ -81,8 +89,8 @@ const PolicySectionRenderer = ({ section, level = 2, baseIndex = 0 }: { section:
             <PolicySectionRenderer 
               key={i} 
               section={sub} 
-              level={level < 6 ? (level + 1) : 6} 
-              // Am ajustat baseIndex pentru recursivitate, ca la fișierul anterior
+              // Asigurăm că nivelul rămâne în limitele definite (2-6)
+              level={(level < 6 ? level + 1 : 6) as 2 | 3 | 4 | 5 | 6} 
               baseIndex={baseIndex * 10 + i + 1} 
             />
           ))}
